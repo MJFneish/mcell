@@ -1,0 +1,6 @@
+footer i {
+  transition: var(--transition);
+}
+footer i:hover {
+  color: var(--primary);
+}

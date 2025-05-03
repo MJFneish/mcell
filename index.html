@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MCell</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Bootstrap CSS CDN installation -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/root.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <link rel="stylesheet" href="assets/css/services.css" />
+    <link rel="stylesheet" href="assets/css/charges.css" />
+    <link rel="stylesheet" href="assets/css/apps.css" />
+    <link rel="stylesheet" href="assets/css/games.css" />
+
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <link rel="stylesheet" href="assets/css/contact_us.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg shadow fixed-top bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand mr-auto" href="#">
+          <img src="assets/images/logo.png" alt="logo" width="50" height="50" />
+          <span>Mahdi</span>
+          Cell
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" go-to="home" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" go-to="charges" href="#">Charges</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" go-to="apps" href="#">Apps</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" go-to="games" href="#">Games</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" go-to="contact-us" href="#">Contacts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <swiper-container
+      id="home"
+      class="mySwiper section py-0"
+      direction="vertical"
+      pagination="true"
+      pagination-clickable="true"
+      speed="1000"
+      bullet-active-class="bullet-active-class"
+      bullet-class="bullet-class"
+    >
+      <swiper-slide>
+        <img src="assets/images/carousel_image_3.jpg" alt="carousel image 1" />
+        <div class="content">
+          <h1 class="title text-5xl font-bold text-center mb-4">Mobile App Development</h1>
+          <p class="description text-center mb-4">
+            Since our establishment, we have been delivering high-quality and sustainable software solutions for corporate purposes of worldwide businesses.
+          </p>
+          <button type="button" class="btn btn-primary text-uppercase py-3 px-4" go-to="contact-us">get in touch</button>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <img src="assets/images/carousel_image_2.jpg" alt="carousel image 2" />
+        <div class="content">
+          <h1 class="title text-5xl font-bold text-center mb-4">Experienced Team</h1>
+          <p class="description text-center mb-4">
+            We are a team of qualified software developers, aimed at creating unique and powerful tools for your business & everyday life.
+          </p>
+          <button type="button" class="btn btn-primary" go-to="contact-us">get in touch</button>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <img src="assets/images/carousel_image_1.jpg" alt="carousel image 3" />
+        <div class="content">
+          <h1 class="title text-5xl font-bold text-center mb-4">Award-Winning Software</h1>
+          <p class="description text-center mb-4">
+            The software solutions developed by our company have been numerously awarded for usability and innovative features.
+          </p>
+          <button type="button" class="btn btn-primary text-uppercase py-3 px-4" go-to="contact-us">get in touch</button>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+
+    <main>
+      <!-- Charges -->
+      <div class="section container scroll-reveal-left d-flex justify-content-center" id="charges">
+        <div class="charges row d-flex row-gap-4 justify-content-center align-items-center">
+          <h1
+            class="col-12 scroll-reveal-right"
+            data-sr-id="12"
+            style="
+              visibility: visible;
+              opacity: 1;
+              transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+              transition: opacity 1.5s ease-in-out 0s, transform 1.5s ease-in-out 0s;
+            "
+          >
+            Charges
+          </h1>
+          <div class="col-12 col-sm-6 col-md-4 rounded-2">
+            <a href="#" target="_blank" class="imageContainer">
+              <img src="/assets/images/charges/alfa.webp" alt="Alfa" class="rounded-2" />
+              <div class="content">
+                <h5 class="name">Alfa</h5>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 rounded-2">
+            <a href="#" target="_blank" class="imageContainer">
+              <img src="/assets/images/charges/touch.webp" alt="Touch" class="rounded-2" />
+              <div class="content">
+                <h5 class="name">Touch</h5>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 rounded-2">
+            <a href="#" target="_blank" class="imageContainer">
+              <img src="/assets/images/charges/ogero.webp" alt="Ogero" class="rounded-2" />
+              <div class="content">
+                <h5 class="name">Ogero</h5>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apps -->
+      <div class="section container scroll-reveal-right" id="apps">
+        <div class="apps row d-flex row-gap-4">
+          <h1 class="col-12 scroll-reveal-right" data-sr-id="12">Apps</h1>
+          <div class="row">
+            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
+              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
+                <img src="/assets/images/apps/itunes.webp" alt="itunes" />
+                <p>Itunes</p>
+              </a>
+            </div>
+            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
+              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
+                <img src="/assets/images/apps/netflix.webp" alt="netflix" />
+                <p>Netflix</p>
+              </a>
+            </div>
+            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
+              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
+                <img src="/assets/images/apps/play_store.webp" alt="play_store" />
+                <p>Play Store</p>
+              </a>
+            </div>
+            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
+              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
+                <img src="/assets/images/apps/playstation.webp" alt="playstation" />
+                <p>Playstation</p>
+              </a>
+            </div>
+            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
+              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
+                <img src="/assets/images/apps/steam.webp" alt="steam" />
+                <p>Steam</p>
+              </a>
+            </div>
+            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
+              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
+                <img src="/assets/images/apps/shahid.webp" alt="shahid" />
+                <p>Shahid</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="#" target="_blank" class="link mt-4 ms-auto" >
+          Check For More
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Games -->
+      <div class="section container scroll-reveal-right" id="games">
+        <div class="row d-flex row-gap-4">
+          <h1 class="col-12 scroll-reveal-right" data-sr-id="12">Games</h1>
+          <div class="games row row-gap-3 justify-content-center">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/pubg.webp" alt="pubg">
+                <div class="card-body">
+                  <h5 class="card-title">PUBG</h5>
+                  <p class="card-text">Your hub for subscriptions, purchases, events, and everything in between! </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/valorant.webp" alt="valorant">
+                <div class="card-body">
+                  <h5 class="card-title">Valorant</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/fifa.webp" alt="fifa">
+                <div class="card-body">
+                  <h5 class="card-title">FIFA</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/fortnite.webp" alt="fortnite">
+                <div class="card-body">
+                  <h5 class="card-title">Fortnite</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/browl_stars.webp" alt="browl_stars">
+                <div class="card-body">
+                  <h5 class="card-title">Browl Stars</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/call_of_duty.webp" alt="call_of_duty">
+                <div class="card-body">
+                  <h5 class="card-title">Call of Duty</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/clash_of_clans.webp" alt="clash_of_clans">
+                <div class="card-body">
+                  <h5 class="card-title">Clash of Clans</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/clash_royal.webp" alt="clash_royal">
+                <div class="card-body">
+                  <h5 class="card-title">Clash Royal</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/delta_force.webp" alt="delta_force">
+                <div class="card-body">
+                  <h5 class="card-title">Delta Force</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/free_fire.webp" alt="free_fire">
+                <div class="card-body">
+                  <h5 class="card-title">Free Fire</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/lords_mobile.webp" alt="lords_mobile">
+                <div class="card-body">
+                  <h5 class="card-title">Lords Mobile</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="assets/images/games/minecraft.webp" alt="minecraft">
+                <div class="card-body">
+                  <h5 class="card-title">Minecraft</h5>
+                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
+                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <a href="#" target="_blank" class="link mt-4 ms-auto" >
+          Check For More
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="section contact container">
+        <div class="row justify-content-center d-flex row-gap-4 scroll-reveal-bottom">
+          <div class="col-sm-8 col-md-6 col-lg-4">
+            <article>
+              <div class="info">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <div class="divider"></div>
+                <p>+961 71 632 553</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-8 col-md-6 col-lg-4">
+            <article>
+              <div class="info">
+                <i class="fa-solid fa-house"></i>
+                <div class="divider"></div>
+                <p>Bedias, Sour, Lebanon</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-8 col-md-6 col-lg-4">
+            <article>
+              <div class="info">
+                <i class="fa-regular fa-comments"></i>
+                <div class="divider"></div>
+                <p>mohammadmahdi.cell@gmail.com</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="section container contact-us" id="contact-us">
+        <div class="title">
+          <h2 class="t1">Get In Touch</h2>
+          <h5 class="t2">If you have any questions, just fill in the contact form, and we will answer you shortly.</h5>
+        </div>
+        <form class="row g-3">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control form-control-lg" id="name" placeholder="Name" />
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control form-control-lg" id="email" placeholder="someone@email.com" />
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control form-control-lg" id="phone" placeholder="xxx-xxx-xxxx" />
+          </div>
+          <div class="col-12">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control form-control-lg" id="message" rows="10" placeholder="Your Message"></textarea>
+          </div>
+          <div class="col-12">
+            <button type="button" id="sendEmail" class="btn btn-primary ms-auto">Submit</button>
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img src="assets/images/logo.png" alt="logo" width="35" height="35" />
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">
+            ©
+            <span id="copy-right-date">2024</span>
+            Company, Inc
+          </span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3 link">
+            <a href="/privacy-policy/">Privacy Policy</a>
+          </li>
+          <li class="ms-3 link">
+            <a href="/terms-cond/">Terms and Condition</a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Swiper CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <!-- JS sources -->
+    <script type="text/javascript" src="assets/js/index.js"></script>
+    <script type="text/javascript" src="assets/js/navbar.js"></script>
+    <script type="text/javascript" src="assets/js/swiper.js"></script>
+    <script type="module" src="assets/js/links.js"></script>
+
+    <script></script>
+  </body>
+</html>

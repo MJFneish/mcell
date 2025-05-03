@@ -1,0 +1,45 @@
+.contact {
+  position: relative;
+}
+.contact article {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 310px;
+  box-shadow: none;
+  border: 1px solid var(--gray5);
+  transition: var(--transition);
+  width: 100%;
+}
+
+.contact article:hover {
+  border-color: transparent;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.17);
+}
+
+.contact article i {
+  font-size: 5rem;
+  color: var(--primary);
+}
+
+.contact article .divider {
+  margin: max(0.5rem, min(1vw, 1rem)) auto;
+  height: 2px;
+  max-width: 100px;
+  width: 0%;
+  background-color: var(--primary);
+  transition: var(--transition);
+}
+.contact article:hover .divider {
+  margin: max(1rem, min(2vw, 2rem)) auto;
+  width: 100%;
+  height: 2px;
+}
+.contact article p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.contact article p:hover {
+  color: var(--primary);
+}

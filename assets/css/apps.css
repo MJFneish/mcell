@@ -1,0 +1,62 @@
+.app {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid var(--gray5);
+  transition: var(--transition);
+  padding: 0 12px;
+}
+
+.app a{
+  text-decoration: none;
+}
+
+.app::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  will-change: transform;
+}
+
+.app img {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  opacity: 0.5;
+  padding: 1px;
+  transition: var(--transition);
+  will-change: transform;
+}
+
+.app p {
+  color: var(--text);
+  opacity: 0.5;
+  font-size: large;
+  margin: 0;
+  transition: var(--transition);
+  will-change: transform;
+
+}
+
+.app:hover {
+  border-color: #151515;
+}
+.app:hover::before {
+  transform: scale(0.94, 0.9);
+  border-color: #151515;
+}
+.app:hover img {
+  opacity: 1;
+  transform: scale(0.9);
+}
+
+.app:hover p {
+  opacity: 1;
+  transform: scale(0.9);
+}

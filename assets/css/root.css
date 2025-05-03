@@ -1,0 +1,12 @@
+:root {
+  --primary: #144e5d;
+  --primary-rgb: 20, 78, 93;
+  --transition: 0.3s all ease-in-out;
+  --text: #000;
+  --gray5: #d7d7d7;
+  --gray4: #c7c7c7;
+  --gray3: #b7b7b7;
+  --gray2: #a7a7a7;
+  --gray1: #979797;
+  --gray0: #575757;
+}

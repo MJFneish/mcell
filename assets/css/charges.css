@@ -1,0 +1,63 @@
+.charges {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.charges .imageContainer {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.charges .imageContainer img {
+  width: 250px;
+  height: 100%;
+  filter: grayscale(100%);
+  transition: var(--transition);
+}
+
+.charges .imageContainer .content {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  min-width: 300px;
+  margin-left: -25px;
+  padding: 15px 20px 15px 50px;
+  transition: var(--transition);
+  z-index: 1;
+}
+.charges .imageContainer .content > * {
+  width: fit-content;
+  color: white;
+}
+.charges .imageContainer .content::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  width: 70%;
+  left: 0;
+  background-color: rgba(17, 17, 17, 0.5);
+  transform: skew(10deg);
+  transform-origin: 50% 100%;
+  z-index: -1;
+}
+
+.charges .imageContainer:hover img {
+  filter: grayscale(0);
+}
+
+.charges .imageContainer:hover .content {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 576px) {
+  .charges > *:not(h1) {
+    padding: 0;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,36 @@
+.contact-us .title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.contact-us .title .t1 {
+  font-size: 2rem;
+  display: inline;
+  text-align: center;
+  min-width: fit-content;
+  border-right: 2px solid var(--gray5);
+  padding-right: 1rem;
+}
+.contact-us .title .t2 {
+  text-align: justify;
+  font-size: 1rem;
+  display: inline;
+  width: fit-content;
+}
+.contact-us textarea {
+  height: 350px;
+}
+
+@media screen and (max-width: 576px) {
+  .contact-us .title {
+    flex-direction: column;
+  }
+  .contact-us .title .t1 {
+    width: 100%;
+    border-bottom: 2px solid var(--gray5);
+    border-right: none;
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+}
