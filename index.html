@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title>MCell</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="description" content="MCell — instant mobile & internet recharge, app subscriptions and game top-ups in Lebanon. Fast, secure, and a WhatsApp message away." />
+    <meta name="theme-color" content="#144e5d" />
+
     <!-- Bootstrap CSS CDN installation -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -39,7 +42,6 @@
     <link rel="stylesheet" href="assets/css/global.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/swiper.css" />
-    <link rel="stylesheet" href="assets/css/services.css" />
     <link rel="stylesheet" href="assets/css/charges.css" />
     <link rel="stylesheet" href="assets/css/apps.css" />
     <link rel="stylesheet" href="assets/css/games.css" />
@@ -52,7 +54,7 @@
   <body>
     <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg shadow fixed-top bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand mr-auto" href="#">
           <img src="assets/images/logo.png" alt="logo" width="50" height="50" />
@@ -100,12 +102,14 @@
       pagination="true"
       pagination-clickable="true"
       speed="1000"
-      bullet-active-class="bullet-active-class"
-      bullet-class="bullet-class"
+      loop="true"
+      autoplay-delay="4500"
+      autoplay-disable-on-interaction="false"
     >
       <swiper-slide>
         <img src="assets/images/carousel_image_3.jpg" alt="carousel image 1" />
         <div class="content">
+          <span class="badge-pill"><i class="fa-solid fa-bolt"></i> Instant Top-Ups &amp; Subscriptions</span>
           <h1 class="title text-5xl font-bold text-center mb-4">Mobile App Development</h1>
           <p class="description text-center mb-4">
             Since our establishment, we have been delivering high-quality and sustainable software solutions for corporate purposes of worldwide businesses.
@@ -116,6 +120,7 @@
       <swiper-slide>
         <img src="assets/images/carousel_image_2.jpg" alt="carousel image 2" />
         <div class="content">
+          <span class="badge-pill"><i class="fa-solid fa-bolt"></i> Instant Top-Ups &amp; Subscriptions</span>
           <h1 class="title text-5xl font-bold text-center mb-4">Experienced Team</h1>
           <p class="description text-center mb-4">
             We are a team of qualified software developers, aimed at creating unique and powerful tools for your business & everyday life.
@@ -126,6 +131,7 @@
       <swiper-slide>
         <img src="assets/images/carousel_image_1.jpg" alt="carousel image 3" />
         <div class="content">
+          <span class="badge-pill"><i class="fa-solid fa-bolt"></i> Instant Top-Ups &amp; Subscriptions</span>
           <h1 class="title text-5xl font-bold text-center mb-4">Award-Winning Software</h1>
           <p class="description text-center mb-4">
             The software solutions developed by our company have been numerously awarded for usability and innovative features.
@@ -135,23 +141,48 @@
       </swiper-slide>
     </swiper-container>
 
+    <!-- Feature strip -->
+    <div class="feature-strip reveal-up">
+      <div class="feature-item">
+        <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+        <div>
+          <h6>Instant Delivery</h6>
+          <p>Top-ups delivered in minutes</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div>
+          <h6>Secure Payment</h6>
+          <p>Trusted, verified transactions</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="icon"><i class="fa-solid fa-tags"></i></div>
+        <div>
+          <h6>Best Prices</h6>
+          <p>Competitive rates, always</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div>
+          <h6>24/7 Support</h6>
+          <p>Reach us anytime on WhatsApp</p>
+        </div>
+      </div>
+    </div>
+
     <main>
       <!-- Charges -->
-      <div class="section container scroll-reveal-left d-flex justify-content-center" id="charges">
+      <div class="section container d-flex justify-content-center" id="charges">
         <div class="charges row d-flex row-gap-4 justify-content-center align-items-center">
-          <h1
-            class="col-12 scroll-reveal-right"
-            data-sr-id="12"
-            style="
-              visibility: visible;
-              opacity: 1;
-              transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-              transition: opacity 1.5s ease-in-out 0s, transform 1.5s ease-in-out 0s;
-            "
-          >
-            Charges
-          </h1>
-          <div class="col-12 col-sm-6 col-md-4 rounded-2">
+          <div class="col-12 section-head reveal-up">
+            <span class="eyebrow">Top-Up Instantly</span>
+            <h2>Mobile &amp; Internet Charges</h2>
+            <p class="section-sub">Recharge your line or internet account in seconds — pick your provider below.</p>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 rounded-2 reveal-up">
             <a href="#" target="_blank" class="imageContainer">
               <img src="assets\images\charges\alfa.webp" alt="Alfa" class="rounded-2" />
               <div class="content">
@@ -159,7 +190,7 @@
               </div>
             </a>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 rounded-2">
+          <div class="col-12 col-sm-6 col-md-4 rounded-2 reveal-up">
             <a href="#" target="_blank" class="imageContainer">
               <img src="assets\images\charges\touch.webp" alt="Touch" class="rounded-2" />
               <div class="content">
@@ -167,7 +198,7 @@
               </div>
             </a>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 rounded-2">
+          <div class="col-12 col-sm-6 col-md-4 rounded-2 reveal-up">
             <a href="#" target="_blank" class="imageContainer">
               <img src="assets\images\charges\ogero.webp" alt="Ogero" class="rounded-2" />
               <div class="content">
@@ -179,184 +210,192 @@
       </div>
 
       <!-- Apps -->
-      <div class="section container scroll-reveal-right" id="apps">
-        <div class="apps row d-flex row-gap-4">
-          <h1 class="col-12 scroll-reveal-right" data-sr-id="12">Apps</h1>
-          <div class="row">
-            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
-              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
-                <img src="/assets/images/apps/itunes.webp" alt="itunes" />
+      <div class="section container" id="apps">
+        <div class="apps">
+          <div class="section-head reveal-up">
+            <span class="eyebrow">Digital Subscriptions</span>
+            <h2>Apps &amp; Streaming</h2>
+            <p class="section-sub">Gift cards, subscriptions and credit for the platforms you already use.</p>
+          </div>
+          <div class="apps-grid">
+            <div class="app reveal-up">
+              <a href="#" target="_blank">
+                <span class="icon-wrap"><img src="assets/images/apps/itunes.webp" alt="itunes" /></span>
                 <p>Itunes</p>
               </a>
             </div>
-            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
-              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
-                <img src="/assets/images/apps/netflix.webp" alt="netflix" />
+            <div class="app reveal-up">
+              <a href="#" target="_blank">
+                <span class="icon-wrap"><img src="assets/images/apps/netflix.webp" alt="netflix" /></span>
                 <p>Netflix</p>
               </a>
             </div>
-            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
-              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
-                <img src="/assets/images/apps/play_store.webp" alt="play_store" />
+            <div class="app reveal-up">
+              <a href="#" target="_blank">
+                <span class="icon-wrap"><img src="assets/images/apps/play_store.webp" alt="play_store" /></span>
                 <p>Play Store</p>
               </a>
             </div>
-            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
-              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
-                <img src="/assets/images/apps/playstation.webp" alt="playstation" />
+            <div class="app reveal-up">
+              <a href="#" target="_blank">
+                <span class="icon-wrap"><img src="assets/images/apps/playstation.webp" alt="playstation" /></span>
                 <p>Playstation</p>
               </a>
             </div>
-            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
-              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
-                <img src="/assets/images/apps/steam.webp" alt="steam" />
+            <div class="app reveal-up">
+              <a href="#" target="_blank">
+                <span class="icon-wrap"><img src="assets/images/apps/steam.webp" alt="steam" /></span>
                 <p>Steam</p>
               </a>
             </div>
-            <div class="app col-sm-6 col-md-5 col-lg-6 col-xl-4">
-              <a class="d-flex gap-2 align-items-center" href="#" target="_blank">
-                <img src="/assets/images/apps/shahid.webp" alt="shahid" />
+            <div class="app reveal-up">
+              <a href="#" target="_blank">
+                <span class="icon-wrap"><img src="assets/images/apps/shahid.webp" alt="shahid" /></span>
                 <p>Shahid</p>
               </a>
             </div>
           </div>
         </div>
-        <a href="#" target="_blank" class="link mt-4 ms-auto" >
+        <a href="#" target="_blank" class="link mt-4 ms-auto">
           Check For More
           <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
 
       <!-- Games -->
-      <div class="section container scroll-reveal-right" id="games">
+      <div class="section container" id="games">
         <div class="row d-flex row-gap-4">
-          <h1 class="col-12 scroll-reveal-right" data-sr-id="12">Games</h1>
+          <div class="col-12 section-head reveal-up">
+            <span class="eyebrow">Level Up</span>
+            <h2>Game Top-Ups</h2>
+            <p class="section-sub">Subscriptions, in-game currency and event passes for your favorite titles.</p>
+          </div>
           <div class="games row row-gap-3 justify-content-center">
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/pubg.webp" alt="pubg">
+                <div class="img-wrap"><img src="assets/images/games/pubg.webp" alt="pubg" /></div>
                 <div class="card-body">
                   <h5 class="card-title">PUBG</h5>
                   <p class="card-text">Your hub for subscriptions, purchases, events, and everything in between! </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/valorant.webp" alt="valorant">
+                <div class="img-wrap"><img src="assets/images/games/valorant.webp" alt="valorant" /></div>
                 <div class="card-body">
                   <h5 class="card-title">Valorant</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/fifa.webp" alt="fifa">
+                <div class="img-wrap"><img src="assets/images/games/fifa.webp" alt="fifa" /></div>
                 <div class="card-body">
                   <h5 class="card-title">FIFA</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/fortnite.webp" alt="fortnite">
+                <div class="img-wrap"><img src="assets/images/games/fortnite.webp" alt="fortnite" /></div>
                 <div class="card-body">
                   <h5 class="card-title">Fortnite</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/browl_stars.webp" alt="browl_stars">
+                <div class="img-wrap"><img src="assets/images/games/browl_stars.webp" alt="browl_stars" /></div>
                 <div class="card-body">
                   <h5 class="card-title">Browl Stars</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/call_of_duty.webp" alt="call_of_duty">
+                <div class="img-wrap"><img src="assets/images/games/call_of_duty.webp" alt="call_of_duty" /></div>
                 <div class="card-body">
                   <h5 class="card-title">Call of Duty</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/clash_of_clans.webp" alt="clash_of_clans">
+                <div class="img-wrap"><img src="assets/images/games/clash_of_clans.webp" alt="clash_of_clans" /></div>
                 <div class="card-body">
                   <h5 class="card-title">Clash of Clans</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/clash_royal.webp" alt="clash_royal">
+                <div class="img-wrap"><img src="assets/images/games/clash_royal.webp" alt="clash_royal" /></div>
                 <div class="card-body">
                   <h5 class="card-title">Clash Royal</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/delta_force.webp" alt="delta_force">
+                <div class="img-wrap"><img src="assets/images/games/delta_force.webp" alt="delta_force" /></div>
                 <div class="card-body">
                   <h5 class="card-title">Delta Force</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/free_fire.webp" alt="free_fire">
+                <div class="img-wrap"><img src="assets/images/games/free_fire.webp" alt="free_fire" /></div>
                 <div class="card-body">
                   <h5 class="card-title">Free Fire</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/lords_mobile.webp" alt="lords_mobile">
+                <div class="img-wrap"><img src="assets/images/games/lords_mobile.webp" alt="lords_mobile" /></div>
                 <div class="card-body">
                   <h5 class="card-title">Lords Mobile</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <img src="assets/images/games/minecraft.webp" alt="minecraft">
+                <div class="img-wrap"><img src="assets/images/games/minecraft.webp" alt="minecraft" /></div>
                 <div class="card-body">
                   <h5 class="card-title">Minecraft</h5>
                   <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary">Message us</a>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
-        <a href="#" target="_blank" class="link mt-4 ms-auto" >
+        <a href="#" target="_blank" class="link mt-4 ms-auto">
           Check For More
           <i class="fa-solid fa-arrow-right"></i>
         </a>
@@ -364,32 +403,35 @@
 
       <!-- Contact Information -->
       <div class="section contact container">
-        <div class="row justify-content-center d-flex row-gap-4 scroll-reveal-bottom">
-          <div class="col-sm-8 col-md-6 col-lg-4">
+        <div class="col-12 section-head reveal-up">
+          <span class="eyebrow">Say Hello</span>
+        </div>
+        <div class="row justify-content-center d-flex row-gap-4">
+          <div class="col-sm-8 col-md-6 col-lg-4 reveal-up">
             <article>
-              <div class="info">
+              <a class="info" href="https://wa.me/71632553?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">
                 <i class="fa-solid fa-mobile-screen-button"></i>
                 <div class="divider"></div>
                 <p>+961 71 632 553</p>
-              </div>
+              </a>
             </article>
           </div>
-          <div class="col-sm-8 col-md-6 col-lg-4">
+          <div class="col-sm-8 col-md-6 col-lg-4 reveal-up">
             <article>
-              <div class="info">
+              <a class="info" href="https://www.google.com/maps/search/?api=1&amp;query=Bedias%2C+Sour%2C+Lebanon" target="_blank" rel="noopener">
                 <i class="fa-solid fa-house"></i>
                 <div class="divider"></div>
                 <p>Bedias, Sour, Lebanon</p>
-              </div>
+              </a>
             </article>
           </div>
-          <div class="col-sm-8 col-md-6 col-lg-4">
+          <div class="col-sm-8 col-md-6 col-lg-4 reveal-up">
             <article>
-              <div class="info">
+              <a class="info" href="mailto:mohammadmahdi.cell@gmail.com">
                 <i class="fa-regular fa-comments"></i>
                 <div class="divider"></div>
                 <p>mohammadmahdi.cell@gmail.com</p>
-              </div>
+              </a>
             </article>
           </div>
         </div>
@@ -397,11 +439,11 @@
 
       <!-- Contact Us -->
       <div class="section container contact-us" id="contact-us">
-        <div class="title">
+        <div class="title reveal-up">
           <h2 class="t1">Get In Touch</h2>
           <h5 class="t2">If you have any questions, just fill in the contact form, and we will answer you shortly.</h5>
         </div>
-        <form class="row g-3">
+        <form class="row g-3 reveal-up">
           <div class="col-12 col-sm-6 col-lg-4">
             <label for="name" class="form-label">Your Name</label>
             <input type="text" class="form-control form-control-lg" id="name" placeholder="Name" />
@@ -419,7 +461,7 @@
             <textarea class="form-control form-control-lg" id="message" rows="10" placeholder="Your Message"></textarea>
           </div>
           <div class="col-12">
-            <button type="button" id="sendEmail" class="btn btn-primary ms-auto">Submit</button>
+            <button type="button" id="sendEmail" class="btn btn-primary ms-auto"><i class="fa-solid fa-paper-plane"></i> Submit</button>
           </div>
 
         </form>
@@ -442,14 +484,27 @@
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li class="ms-3 link">
-            <a href="/privacy-policy/">Privacy Policy</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
           </li>
           <li class="ms-3 link">
-            <a href="/terms-cond/">Terms and Condition</a>
+            <a href="terms-and-conditions.html">Terms and Condition</a>
           </li>
         </ul>
       </footer>
     </div>
+
+    <!-- Floating actions -->
+    <a
+      href="https://wa.me/71632553?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+      target="_blank"
+      class="whatsapp-float"
+      aria-label="Chat with us on WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <!-- Scripts -->
     <!-- JQuery -->
@@ -469,8 +524,8 @@
     <script type="text/javascript" src="assets/js/index.js"></script>
     <script type="text/javascript" src="assets/js/navbar.js"></script>
     <script type="text/javascript" src="assets/js/swiper.js"></script>
+    <script type="text/javascript" src="assets/js/ui.js"></script>
+    <script type="text/javascript" src="assets/js/reveal.js"></script>
     <script type="module" src="assets/js/links.js"></script>
-
-    <script></script>
   </body>
 </html>

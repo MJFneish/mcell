@@ -1,5 +1,5 @@
 $(function () {
-  $("nav a[go-to], button[go-to]").on("click", function (e) {
+  $("[go-to]").on("click", function (e) {
     e.preventDefault();
 
     var targetId = $(this).attr("go-to");
@@ -40,9 +40,15 @@ $(function () {
     });
   }
 
+  function updateNavbarScrolled() {
+    $("nav.navbar").toggleClass("scrolled", $(window).scrollTop() > 40);
+  }
+
   $(document).scroll(function () {
     updateActiveNavLink();
+    updateNavbarScrolled();
   });
 
   updateActiveNavLink();
+  updateNavbarScrolled();
 });

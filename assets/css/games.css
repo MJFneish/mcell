@@ -1,3 +1,74 @@
 .games > * {
   max-width: 350px;
 }
+
+.games .card {
+  border: 1px solid var(--gray5);
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 100%;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.games .card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.games .card .img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.games .card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.games .card:hover img {
+  transform: scale(1.08);
+}
+
+.games .card .img-wrap::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(10, 46, 56, 0.55), transparent);
+  pointer-events: none;
+}
+
+.games .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.games .card-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.games .card-text {
+  color: var(--gray0);
+  font-size: 0.9rem;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.games .card .btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+}
+
+.games .card .btn i {
+  font-size: 1rem;
+}

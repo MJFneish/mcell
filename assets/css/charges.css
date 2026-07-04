@@ -9,13 +9,21 @@
   display: block;
   width: 100%;
   overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.charges .imageContainer:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
 }
 
 .charges .imageContainer img {
   width: 250px;
   height: 100%;
-  filter: grayscale(100%);
-  transition: var(--transition);
+  filter: grayscale(70%);
+  transition: transform 0.6s ease, filter 0.6s ease;
 }
 
 .charges .imageContainer .content {
@@ -34,6 +42,27 @@
   width: fit-content;
   color: white;
 }
+.charges .imageContainer .content .name {
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.charges .imageContainer .content .name::after {
+  content: "\f061";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: var(--transition);
+  color: var(--accent);
+}
+.charges .imageContainer:hover .content .name::after {
+  opacity: 1;
+  transform: translateX(0);
+}
 .charges .imageContainer .content::before {
   position: absolute;
   content: "";
@@ -41,7 +70,7 @@
   bottom: 0;
   width: 70%;
   left: 0;
-  background-color: rgba(17, 17, 17, 0.5);
+  background: linear-gradient(90deg, rgba(var(--primary-rgb), 0.85), rgba(17, 17, 17, 0.55));
   transform: skew(10deg);
   transform-origin: 50% 100%;
   z-index: -1;
@@ -49,6 +78,7 @@
 
 .charges .imageContainer:hover img {
   filter: grayscale(0);
+  transform: scale(1.06);
 }
 
 .charges .imageContainer:hover .content {
@@ -56,7 +86,7 @@
 }
 
 @media screen and (max-width: 576px) {
-  .charges > *:not(h1) {
+  .charges > *:not(.section-head) {
     padding: 0;
     max-width: 300px;
   }

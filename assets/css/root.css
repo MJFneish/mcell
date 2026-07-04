@@ -1,7 +1,17 @@
 :root {
   --primary: #144e5d;
   --primary-rgb: 20, 78, 93;
+  --primary-2: #1c8093;
+  --primary-2-rgb: 28, 128, 147;
+  --primary-dark: #0a2e38;
+  --accent: #ffb400;
+  --accent-rgb: 255, 180, 0;
+  --accent-2: #ff6b57;
+  --whatsapp: #25d366;
+
   --transition: 0.3s all ease-in-out;
+  --transition-fast: 0.18s all ease-in-out;
+
   --text: #000;
   --gray5: #d7d7d7;
   --gray4: #c7c7c7;
@@ -9,4 +19,15 @@
   --gray2: #a7a7a7;
   --gray1: #979797;
   --gray0: #575757;
+
+  --radius-sm: 0.5rem;
+  --radius: 1rem;
+  --radius-lg: 1.5rem;
+
+  --shadow-sm: 0 4px 14px rgba(10, 30, 35, 0.08);
+  --shadow: 0 12px 30px rgba(10, 30, 35, 0.12);
+  --shadow-lg: 0 24px 55px rgba(10, 30, 35, 0.18);
+
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
 }
