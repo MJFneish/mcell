@@ -4,6 +4,12 @@
   padding: 8.5rem 0 3rem;
   text-align: center;
 }
+
+.legal-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .legal-hero .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -182,5 +188,31 @@
 @media screen and (max-width: 576px) {
   .legal-hero {
     padding-top: 7rem;
+  }
+
+  /* Collapse "Back to Home" to an icon-only button and tighten the language
+     switch so the brand, back link and language switch stay on one line —
+     otherwise the fixed navbar wraps to two rows and grows taller than
+     .legal-hero's padding-top accounts for, pushing the eyebrow badge up
+     under the navbar. */
+  .legal-nav-actions {
+    gap: 0.4rem;
+  }
+  .legal-nav-actions .lang-btn {
+    padding: 0.3rem 0.55rem;
+  }
+  .legal-nav-actions .link span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .legal-nav-actions .link {
+    padding: 4px 6px;
   }
 }
