@@ -92,6 +92,7 @@
   min-width: 0;
   max-width: 760px;
 }
+
 .legal-content > .lead {
   color: var(--gray0);
   font-size: 1.05rem;

@@ -8,8 +8,23 @@
     <meta name="description" content="MCell privacy policy — how we collect, use and protect your information." />
     <meta name="theme-color" content="#144e5d" />
 
+    <!-- Language: applied before first paint to avoid a flash of the wrong direction/language -->
+    <script>
+      (function () {
+        var lang = localStorage.getItem("mcell-lang") === "ar" ? "ar" : "en";
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      })();
+    </script>
+    <style>
+      html:not([data-i18n-ready]) body {
+        visibility: hidden;
+      }
+    </style>
+
     <!-- Bootstrap CSS CDN installation -->
     <link
+      id="bootstrapCss"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
@@ -29,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tajawal:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -51,19 +66,25 @@
           <span>Mahdi</span>
           Cell
         </a>
-        <a href="index.html" class="link">
-          <i class="fa-solid fa-arrow-left"></i>
-          Back to Home
-        </a>
+        <div class="d-flex align-items-center gap-3">
+          <a href="index.html" class="link">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span data-i18n="nav.backToHome">Back to Home</span>
+          </a>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="ar">AR</button>
+          </div>
+        </div>
       </div>
     </nav>
 
     <!-- Page hero -->
     <div class="legal-hero">
       <div class="container">
-        <span class="eyebrow"><i class="fa-solid fa-shield-halved"></i> Legal</span>
-        <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: July 4, 2026</p>
+        <span class="eyebrow"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="legal.eyebrow">Legal</span></span>
+        <h1 data-i18n="privacy.pageTitle">Privacy Policy</h1>
+        <p class="updated" data-i18n="privacy.updated">Last updated: July 4, 2026</p>
       </div>
     </div>
 
@@ -72,76 +93,77 @@
         <div class="legal-layout">
           <!-- Table of contents -->
           <aside class="legal-toc reveal-left">
-            <h6>On this page</h6>
+            <h6 data-i18n="legal.toc">On this page</h6>
             <ol>
-              <li><a href="#information-we-collect">Information We Collect</a></li>
-              <li><a href="#how-we-use-information">How We Use Your Information</a></li>
-              <li><a href="#whatsapp-communication">WhatsApp Communication</a></li>
-              <li><a href="#third-party-services">Third-Party Services &amp; Links</a></li>
-              <li><a href="#cookies">Cookies &amp; Tracking</a></li>
-              <li><a href="#data-security">Data Security</a></li>
-              <li><a href="#data-retention">Data Retention</a></li>
-              <li><a href="#your-rights">Your Rights</a></li>
-              <li><a href="#childrens-privacy">Children's Privacy</a></li>
-              <li><a href="#changes">Changes to This Policy</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="#information-we-collect" data-i18n="privacy.s1.title">Information We Collect</a></li>
+              <li><a href="#how-we-use-information" data-i18n="privacy.s2.title">How We Use Your Information</a></li>
+              <li><a href="#whatsapp-communication" data-i18n="privacy.s3.title">WhatsApp Communication</a></li>
+              <li><a href="#third-party-services" data-i18n="privacy.s4.title">Third-Party Services &amp; Links</a></li>
+              <li><a href="#cookies" data-i18n="privacy.s5.title">Cookies &amp; Tracking</a></li>
+              <li><a href="#data-security" data-i18n="privacy.s6.title">Data Security</a></li>
+              <li><a href="#data-retention" data-i18n="privacy.s7.title">Data Retention</a></li>
+              <li><a href="#your-rights" data-i18n="privacy.s8.title">Your Rights</a></li>
+              <li><a href="#childrens-privacy" data-i18n="privacy.s9.title">Children's Privacy</a></li>
+              <li><a href="#changes" data-i18n="privacy.s10.title">Changes to This Policy</a></li>
+              <li><a href="#contact" data-i18n="privacy.s11.title">Contact Us</a></li>
             </ol>
           </aside>
 
           <!-- Content -->
           <article class="legal-content reveal-up">
-            <p class="lead">
+            <p class="lead" data-i18n="privacy.intro">
               MCell ("we", "us", "our") provides mobile &amp; internet top-ups, digital app subscriptions and game top-ups in Lebanon. This
               policy explains what information we collect through this website, how it is used, and the choices you have. By using this
               site, you agree to the practices described below.
             </p>
 
             <section id="information-we-collect">
-              <h2><span class="num">1</span> Information We Collect</h2>
-              <p>We only collect information that you choose to give us. This happens in two places on the site:</p>
+              <h2><span class="num">1</span> <span data-i18n="privacy.s1.title">Information We Collect</span></h2>
+              <p data-i18n="privacy.s1.p1">We only collect information that you choose to give us. This happens in two places on the site:</p>
               <ul>
                 <li>
-                  <strong>The contact form.</strong> If you fill in the "Get In Touch" form, we ask for your name, email address, phone
+                  <strong data-i18n="privacy.s1.li1Strong">The contact form.</strong>
+                  <span data-i18n="privacy.s1.li1Text">If you fill in the "Get In Touch" form, we ask for your name, email address, phone
                   number and message. This form does not submit to a server we control — it opens your own email application with the
                   message pre-filled, so it is sent directly from your inbox to ours. We never see or store this data unless you actually
-                  send that email.
+                  send that email.</span>
                 </li>
                 <li>
-                  <strong>WhatsApp links.</strong> Buttons across the site (Charges, Apps, Games, and the floating WhatsApp icon) open a
+                  <strong data-i18n="privacy.s1.li2Strong">WhatsApp links.</strong>
+                  <span data-i18n="privacy.s1.li2Text">Buttons across the site (Charges, Apps, Games, and the floating WhatsApp icon) open a
                   WhatsApp chat with a pre-filled message. Once you send it, we receive whatever information WhatsApp shares with us —
-                  typically your phone number, profile name, and the message content.
+                  typically your phone number, profile name, and the message content.</span>
                 </li>
               </ul>
             </section>
 
             <section id="how-we-use-information">
-              <h2><span class="num">2</span> How We Use Your Information</h2>
-              <p>Any information you send us is used only to:</p>
+              <h2><span class="num">2</span> <span data-i18n="privacy.s2.title">How We Use Your Information</span></h2>
+              <p data-i18n="privacy.s2.p1">Any information you send us is used only to:</p>
               <ul>
-                <li>Respond to your inquiry and provide customer support;</li>
-                <li>Process and coordinate the top-up, subscription or game credit you requested;</li>
-                <li>Keep a record of the conversation so we can follow up if needed.</li>
+                <li data-i18n="privacy.s2.li1">Respond to your inquiry and provide customer support;</li>
+                <li data-i18n="privacy.s2.li2">Process and coordinate the top-up, subscription or game credit you requested;</li>
+                <li data-i18n="privacy.s2.li3">Keep a record of the conversation so we can follow up if needed.</li>
               </ul>
-              <p>We do not sell, rent, or trade your personal information to third parties for marketing purposes.</p>
+              <p data-i18n="privacy.s2.p2">We do not sell, rent, or trade your personal information to third parties for marketing purposes.</p>
             </section>
 
             <section id="whatsapp-communication">
-              <h2><span class="num">3</span> WhatsApp Communication</h2>
+              <h2><span class="num">3</span> <span data-i18n="privacy.s3.title">WhatsApp Communication</span></h2>
               <p>
-                Since orders and support are handled over WhatsApp, that conversation is also subject to
-                <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">WhatsApp's own Privacy Policy</a>,
-                operated by Meta. We recommend reviewing it to understand how WhatsApp itself handles your data.
+                <span data-i18n="privacy.s3.p1a">Since orders and support are handled over WhatsApp, that conversation is also subject to</span>
+                <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener" data-i18n="privacy.s3.link">WhatsApp's own Privacy Policy</a><span data-i18n="privacy.s3.p1b">, operated by Meta. We recommend reviewing it to understand how WhatsApp itself handles your data.</span>
               </p>
             </section>
 
             <section id="third-party-services">
-              <h2><span class="num">4</span> Third-Party Services &amp; Links</h2>
-              <p>
+              <h2><span class="num">4</span> <span data-i18n="privacy.s4.title">Third-Party Services &amp; Links</span></h2>
+              <p data-i18n="privacy.s4.p1">
                 This site loads a small number of external resources to function and look the way it does — Bootstrap, Swiper, Font
                 Awesome and Google Fonts, served from their respective content delivery networks. Loading these may expose your IP address
                 and browser information to those providers, under their own privacy policies.
               </p>
-              <p>
+              <p data-i18n="privacy.s4.p2">
                 The Charges, Apps and Games sections link out to third-party providers and platforms (e.g. Alfa, Touch, Ogero, iTunes,
                 Netflix, Google Play, PlayStation, Steam, Shahid, PUBG, Valorant, FIFA and similar). We are not responsible for the privacy
                 practices of those third-party sites once you leave ours.
@@ -149,65 +171,65 @@
             </section>
 
             <section id="cookies">
-              <h2><span class="num">5</span> Cookies &amp; Tracking</h2>
-              <p>
+              <h2><span class="num">5</span> <span data-i18n="privacy.s5.title">Cookies &amp; Tracking</span></h2>
+              <p data-i18n="privacy.s5.p1">
                 We do not use analytics, advertising, or tracking cookies on this site. Your browser may still store standard, functional
                 data (such as font or script caching) as part of normal web browsing.
               </p>
             </section>
 
             <section id="data-security">
-              <h2><span class="num">6</span> Data Security</h2>
-              <p>
+              <h2><span class="num">6</span> <span data-i18n="privacy.s6.title">Data Security</span></h2>
+              <p data-i18n="privacy.s6.p1">
                 We take reasonable steps to keep any information shared with us confidential. However, no method of transmission over the
                 internet, email, or WhatsApp is 100% secure, and we cannot guarantee absolute security.
               </p>
             </section>
 
             <section id="data-retention">
-              <h2><span class="num">7</span> Data Retention</h2>
-              <p>
+              <h2><span class="num">7</span> <span data-i18n="privacy.s7.title">Data Retention</span></h2>
+              <p data-i18n="privacy.s7.p1">
                 We keep conversation and order records only for as long as needed to provide support, resolve any issues, or comply with
                 applicable law. Messages sent through WhatsApp are also retained according to WhatsApp's own retention practices.
               </p>
             </section>
 
             <section id="your-rights">
-              <h2><span class="num">8</span> Your Rights</h2>
-              <p>
+              <h2><span class="num">8</span> <span data-i18n="privacy.s8.title">Your Rights</span></h2>
+              <p data-i18n="privacy.s8.p1">
                 You may ask us to access, correct, or delete any personal information we hold about you at any time — just reach out
                 through the contact details below and we'll take care of it.
               </p>
             </section>
 
             <section id="childrens-privacy">
-              <h2><span class="num">9</span> Children's Privacy</h2>
-              <p>
+              <h2><span class="num">9</span> <span data-i18n="privacy.s9.title">Children's Privacy</span></h2>
+              <p data-i18n="privacy.s9.p1">
                 Our services are not directed at children, and we do not knowingly collect personal information from anyone under the age
                 of 13.
               </p>
             </section>
 
             <section id="changes">
-              <h2><span class="num">10</span> Changes to This Policy</h2>
-              <p>
+              <h2><span class="num">10</span> <span data-i18n="privacy.s10.title">Changes to This Policy</span></h2>
+              <p data-i18n="privacy.s10.p1">
                 We may update this policy from time to time to reflect changes to our practices. The "Last updated" date at the top of
                 this page will always reflect the latest revision.
               </p>
             </section>
 
             <section id="contact">
-              <h2><span class="num">11</span> Contact Us</h2>
-              <p>If you have any questions about this policy or how your information is handled, reach out through any of the channels below.</p>
+              <h2><span class="num">11</span> <span data-i18n="privacy.s11.title">Contact Us</span></h2>
+              <p data-i18n="privacy.s11.p1">If you have any questions about this policy or how your information is handled, reach out through any of the channels below.</p>
               <div class="legal-contact-card">
                 <a href="https://wa.me/71632553?text=Hello%2C%20I%20have%20a%20question%20about%20your%20privacy%20policy." target="_blank" rel="noopener">
-                  <i class="fa-brands fa-whatsapp"></i> +961 71 632 553
+                  <i class="fa-brands fa-whatsapp"></i> <span dir="ltr">+961 71 632 553</span>
                 </a>
                 <a href="mailto:mohammadmahdi.cell@gmail.com">
                   <i class="fa-regular fa-envelope"></i> mohammadmahdi.cell@gmail.com
                 </a>
                 <a href="https://www.google.com/maps/search/?api=1&amp;query=Bedias%2C+Sour%2C+Lebanon" target="_blank" rel="noopener">
-                  <i class="fa-solid fa-location-dot"></i> Bedias, Sour, Lebanon
+                  <i class="fa-solid fa-location-dot"></i> <span data-i18n="contact.location">Bedias, Sour, Lebanon</span>
                 </a>
               </div>
             </section>
@@ -226,16 +248,16 @@
           <span class="mb-3 mb-md-0 text-muted">
             ©
             <span id="copy-right-date">2024</span>
-            Company, Inc
+            <span data-i18n="footer.brand">MCell</span>. <span data-i18n="footer.rights">All rights reserved.</span>
           </span>
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li class="ms-3 link">
-            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy Policy</a>
           </li>
           <li class="ms-3 link">
-            <a href="terms-and-conditions.html">Terms and Condition</a>
+            <a href="terms-and-conditions.html" data-i18n="footer.termsConditions">Terms and Condition</a>
           </li>
         </ul>
       </footer>
@@ -247,14 +269,18 @@
       target="_blank"
       class="whatsapp-float"
       aria-label="Chat with us on WhatsApp"
+      data-i18n-aria="aria.whatsapp"
     >
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top" data-i18n-aria="aria.backToTop">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <!-- Scripts -->
+    <!-- Translation: runs first so the page reveals as soon as possible -->
+    <script type="text/javascript" src="assets/js/i18n.js"></script>
+
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 

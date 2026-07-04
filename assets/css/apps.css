@@ -24,17 +24,30 @@
 }
 
 .app .icon-wrap {
+  position: relative;
   width: 68px;
   height: 68px;
   border-radius: 1.1rem;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(var(--primary-rgb), 0.06);
-  transition: var(--transition);
+}
+
+.app .icon-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
 .app img {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 42px;
   height: 42px;
@@ -55,8 +68,8 @@
   box-shadow: var(--shadow);
   transform: translateY(-6px);
 }
-.app:hover .icon-wrap {
-  background: var(--gradient-primary);
+.app:hover .icon-wrap::before {
+  opacity: 1;
 }
 .app:hover img {
   transform: scale(1.08);

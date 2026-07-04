@@ -10,7 +10,7 @@ $(function () {
       const message = $('#message').val().trim();
       
       const body = `Hello%0D%0A%0D%0A${message}%0D%0A%0D%0ABest regards,%0D%0A${name}%0D%0APhone: ${phone}`;
-      const mailtoLink = `mailto:your@email.com?subject=Contact Form Submission&body=${body}`;
+      const mailtoLink = `mailto:mohammadmahdi.cell@gmail.com?subject=Contact Form Submission&body=${body}`;
     
       window.location.href = mailtoLink;
     });

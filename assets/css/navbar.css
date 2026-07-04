@@ -13,6 +13,7 @@
 }
 
 .navbar-brand {
+  direction: ltr;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -74,4 +75,33 @@
     transform: none;
     visibility: visible;
   }
+}
+
+/* Language switch */
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--gray4);
+  border-radius: 50px;
+  padding: 3px;
+  gap: 2px;
+  direction: ltr;
+}
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--gray0);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.lang-btn.active {
+  background: var(--gradient-primary);
+  color: #fff;
+}
+.lang-btn:not(.active):hover {
+  color: var(--primary);
 }

@@ -3,6 +3,18 @@
   color: #111;
 }
 
+/* Arabic (RTL) typography + icon mirroring */
+html[dir="rtl"] body {
+  font-family: "Tajawal", "Poppins", sans-serif;
+}
+
+html[dir="rtl"] .link i {
+  transform: scaleX(-1);
+}
+html[dir="rtl"] .link:hover i {
+  transform: scaleX(-1) translateX(4px);
+}
+
 /* Buttons */
 .btn {
   text-transform: uppercase;

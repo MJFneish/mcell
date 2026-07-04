@@ -8,8 +8,23 @@
     <meta name="description" content="MCell terms and conditions — the rules that apply when you use our site and services." />
     <meta name="theme-color" content="#144e5d" />
 
+    <!-- Language: applied before first paint to avoid a flash of the wrong direction/language -->
+    <script>
+      (function () {
+        var lang = localStorage.getItem("mcell-lang") === "ar" ? "ar" : "en";
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      })();
+    </script>
+    <style>
+      html:not([data-i18n-ready]) body {
+        visibility: hidden;
+      }
+    </style>
+
     <!-- Bootstrap CSS CDN installation -->
     <link
+      id="bootstrapCss"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
@@ -29,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tajawal:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -51,19 +66,25 @@
           <span>Mahdi</span>
           Cell
         </a>
-        <a href="index.html" class="link">
-          <i class="fa-solid fa-arrow-left"></i>
-          Back to Home
-        </a>
+        <div class="d-flex align-items-center gap-3">
+          <a href="index.html" class="link">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span data-i18n="nav.backToHome">Back to Home</span>
+          </a>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="ar">AR</button>
+          </div>
+        </div>
       </div>
     </nav>
 
     <!-- Page hero -->
     <div class="legal-hero">
       <div class="container">
-        <span class="eyebrow"><i class="fa-solid fa-file-contract"></i> Legal</span>
-        <h1>Terms &amp; Conditions</h1>
-        <p class="updated">Last updated: July 4, 2026</p>
+        <span class="eyebrow"><i class="fa-solid fa-file-contract"></i> <span data-i18n="legal.eyebrow">Legal</span></span>
+        <h1 data-i18n="terms.pageTitle">Terms &amp; Conditions</h1>
+        <p class="updated" data-i18n="terms.updated">Last updated: July 4, 2026</p>
       </div>
     </div>
 
@@ -72,56 +93,56 @@
         <div class="legal-layout">
           <!-- Table of contents -->
           <aside class="legal-toc reveal-left">
-            <h6>On this page</h6>
+            <h6 data-i18n="legal.toc">On this page</h6>
             <ol>
-              <li><a href="#acceptance">Acceptance of Terms</a></li>
-              <li><a href="#our-services">About Our Services</a></li>
-              <li><a href="#orders-payment">Orders &amp; Payment</a></li>
-              <li><a href="#delivery">Delivery of Digital Goods</a></li>
-              <li><a href="#refunds">Refunds &amp; Cancellations</a></li>
-              <li><a href="#user-responsibilities">Your Responsibilities</a></li>
-              <li><a href="#third-party-platforms">Third-Party Platforms &amp; Trademarks</a></li>
-              <li><a href="#intellectual-property">Intellectual Property</a></li>
-              <li><a href="#liability">Limitation of Liability</a></li>
-              <li><a href="#governing-law">Governing Law</a></li>
-              <li><a href="#changes">Changes to These Terms</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><a href="#acceptance" data-i18n="terms.s1.title">Acceptance of Terms</a></li>
+              <li><a href="#our-services" data-i18n="terms.s2.title">About Our Services</a></li>
+              <li><a href="#orders-payment" data-i18n="terms.s3.title">Orders &amp; Payment</a></li>
+              <li><a href="#delivery" data-i18n="terms.s4.title">Delivery of Digital Goods</a></li>
+              <li><a href="#refunds" data-i18n="terms.s5.title">Refunds &amp; Cancellations</a></li>
+              <li><a href="#user-responsibilities" data-i18n="terms.s6.title">Your Responsibilities</a></li>
+              <li><a href="#third-party-platforms" data-i18n="terms.s7.title">Third-Party Platforms &amp; Trademarks</a></li>
+              <li><a href="#intellectual-property" data-i18n="terms.s8.title">Intellectual Property</a></li>
+              <li><a href="#liability" data-i18n="terms.s9.title">Limitation of Liability</a></li>
+              <li><a href="#governing-law" data-i18n="terms.s10.title">Governing Law</a></li>
+              <li><a href="#changes" data-i18n="terms.s11.title">Changes to These Terms</a></li>
+              <li><a href="#contact" data-i18n="terms.s12.title">Contact Us</a></li>
             </ol>
           </aside>
 
           <!-- Content -->
           <article class="legal-content reveal-up">
-            <p class="lead">
+            <p class="lead" data-i18n="terms.intro">
               These Terms and Conditions govern your use of the MCell website and the services advertised on it. By browsing this site or
               placing an order through WhatsApp, you agree to these terms.
             </p>
 
             <section id="acceptance">
-              <h2><span class="num">1</span> Acceptance of Terms</h2>
+              <h2><span class="num">1</span> <span data-i18n="terms.s1.title">Acceptance of Terms</span></h2>
               <p>
-                By accessing this website, requesting a top-up, subscription, or game credit through us, you confirm that you have read,
-                understood, and agreed to these Terms and Conditions and our
-                <a href="privacy-policy.html">Privacy Policy</a>. If you do not agree, please do not use our services.
+                <span data-i18n="terms.s1.p1a">By accessing this website, requesting a top-up, subscription, or game credit through us, you confirm that you have read,
+                understood, and agreed to these Terms and Conditions and our</span>
+                <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy Policy</a><span data-i18n="terms.s1.p1b">. If you do not agree, please do not use our services.</span>
               </p>
             </section>
 
             <section id="our-services">
-              <h2><span class="num">2</span> About Our Services</h2>
-              <p>MCell facilitates:</p>
+              <h2><span class="num">2</span> <span data-i18n="terms.s2.title">About Our Services</span></h2>
+              <p data-i18n="terms.s2.p1">MCell facilitates:</p>
               <ul>
-                <li>Mobile &amp; internet recharges for local providers such as Alfa, Touch and Ogero;</li>
-                <li>Digital subscriptions and gift cards, including iTunes, Netflix, Google Play, PlayStation and Steam;</li>
-                <li>Game top-ups and in-game currency for titles such as PUBG, Valorant, FIFA, Fortnite and others.</li>
+                <li data-i18n="terms.s2.li1">Mobile &amp; internet recharges for local providers such as Alfa, Touch and Ogero;</li>
+                <li data-i18n="terms.s2.li2">Digital subscriptions and gift cards, including iTunes, Netflix, Google Play, PlayStation and Steam;</li>
+                <li data-i18n="terms.s2.li3">Game top-ups and in-game currency for titles such as PUBG, Valorant, FIFA, Fortnite and others.</li>
               </ul>
-              <p>
+              <p data-i18n="terms.s2.p2">
                 This website is a catalog, not an automated checkout. Every request is finalized manually, with a real person, over
                 WhatsApp.
               </p>
             </section>
 
             <section id="orders-payment">
-              <h2><span class="num">3</span> Orders &amp; Payment</h2>
-              <p>
+              <h2><span class="num">3</span> <span data-i18n="terms.s3.title">Orders &amp; Payment</span></h2>
+              <p data-i18n="terms.s3.p1">
                 Pricing, availability and accepted payment methods are confirmed directly with you over WhatsApp at the time of your
                 request, and may change without prior notice. An order is only confirmed once we have agreed on the details and received
                 payment as arranged. You are responsible for double-checking the account, number, or ID you provide before we process it.
@@ -129,8 +150,8 @@
             </section>
 
             <section id="delivery">
-              <h2><span class="num">4</span> Delivery of Digital Goods</h2>
-              <p>
+              <h2><span class="num">4</span> <span data-i18n="terms.s4.title">Delivery of Digital Goods</span></h2>
+              <p data-i18n="terms.s4.p1">
                 Most top-ups and codes are delivered shortly after payment is confirmed, but delivery times can vary depending on the
                 provider or network involved and are not guaranteed to be instant. We'll keep you updated over WhatsApp if anything is
                 delayed.
@@ -138,8 +159,8 @@
             </section>
 
             <section id="refunds">
-              <h2><span class="num">5</span> Refunds &amp; Cancellations</h2>
-              <p>
+              <h2><span class="num">5</span> <span data-i18n="terms.s5.title">Refunds &amp; Cancellations</span></h2>
+              <p data-i18n="terms.s5.p1">
                 Because top-ups, subscriptions and game credits are digital goods that are typically activated immediately, they are
                 generally non-refundable once delivered. If something was delivered incorrectly or does not work due to an error on our
                 part, contact us right away and we will make it right on a case-by-case basis.
@@ -147,18 +168,18 @@
             </section>
 
             <section id="user-responsibilities">
-              <h2><span class="num">6</span> Your Responsibilities</h2>
-              <p>When using our services, you agree to:</p>
+              <h2><span class="num">6</span> <span data-i18n="terms.s6.title">Your Responsibilities</span></h2>
+              <p data-i18n="terms.s6.p1">When using our services, you agree to:</p>
               <ul>
-                <li>Provide accurate account details, phone numbers, or game/player IDs;</li>
-                <li>Only request top-ups or subscriptions for accounts you own or are authorized to use;</li>
-                <li>Use our services lawfully and not for fraudulent purposes.</li>
+                <li data-i18n="terms.s6.li1">Provide accurate account details, phone numbers, or game/player IDs;</li>
+                <li data-i18n="terms.s6.li2">Only request top-ups or subscriptions for accounts you own or are authorized to use;</li>
+                <li data-i18n="terms.s6.li3">Use our services lawfully and not for fraudulent purposes.</li>
               </ul>
             </section>
 
             <section id="third-party-platforms">
-              <h2><span class="num">7</span> Third-Party Platforms &amp; Trademarks</h2>
-              <p>
+              <h2><span class="num">7</span> <span data-i18n="terms.s7.title">Third-Party Platforms &amp; Trademarks</span></h2>
+              <p data-i18n="terms.s7.p1">
                 Alfa, Touch, Ogero, iTunes, Netflix, Google Play, PlayStation, Steam, Shahid, PUBG, Valorant, FIFA, Fortnite, and all other
                 provider and game names mentioned on this site are trademarks of their respective owners. MCell is an independent
                 reseller/facilitator and, unless explicitly stated, is not officially affiliated with, endorsed by, or sponsored by these
@@ -167,16 +188,16 @@
             </section>
 
             <section id="intellectual-property">
-              <h2><span class="num">8</span> Intellectual Property</h2>
-              <p>
+              <h2><span class="num">8</span> <span data-i18n="terms.s8.title">Intellectual Property</span></h2>
+              <p data-i18n="terms.s8.p1">
                 The MCell name, logo, and the original content, layout and design of this website belong to MCell and may not be copied or
                 reused without permission.
               </p>
             </section>
 
             <section id="liability">
-              <h2><span class="num">9</span> Limitation of Liability</h2>
-              <p>
+              <h2><span class="num">9</span> <span data-i18n="terms.s9.title">Limitation of Liability</span></h2>
+              <p data-i18n="terms.s9.p1">
                 We do our best to make sure every order is fulfilled correctly, but MCell is not liable for delays, losses, or issues
                 caused by third-party providers, networks, payment platforms, or incorrect information provided by you. Our services are
                 provided "as is," without warranties beyond those required by applicable law.
@@ -184,30 +205,30 @@
             </section>
 
             <section id="governing-law">
-              <h2><span class="num">10</span> Governing Law</h2>
-              <p>These terms are governed by the laws of Lebanon, without regard to conflict-of-law principles.</p>
+              <h2><span class="num">10</span> <span data-i18n="terms.s10.title">Governing Law</span></h2>
+              <p data-i18n="terms.s10.p1">These terms are governed by the laws of Lebanon, without regard to conflict-of-law principles.</p>
             </section>
 
             <section id="changes">
-              <h2><span class="num">11</span> Changes to These Terms</h2>
-              <p>
+              <h2><span class="num">11</span> <span data-i18n="terms.s11.title">Changes to These Terms</span></h2>
+              <p data-i18n="terms.s11.p1">
                 We may update these Terms and Conditions from time to time. The "Last updated" date at the top of this page reflects the
                 most recent revision, and continued use of our services after a change means you accept the updated terms.
               </p>
             </section>
 
             <section id="contact">
-              <h2><span class="num">12</span> Contact Us</h2>
-              <p>Questions about these terms? Reach out through any of the channels below.</p>
+              <h2><span class="num">12</span> <span data-i18n="terms.s12.title">Contact Us</span></h2>
+              <p data-i18n="terms.s12.p1">Questions about these terms? Reach out through any of the channels below.</p>
               <div class="legal-contact-card">
                 <a href="https://wa.me/71632553?text=Hello%2C%20I%20have%20a%20question%20about%20your%20terms%20and%20conditions." target="_blank" rel="noopener">
-                  <i class="fa-brands fa-whatsapp"></i> +961 71 632 553
+                  <i class="fa-brands fa-whatsapp"></i> <span dir="ltr">+961 71 632 553</span>
                 </a>
                 <a href="mailto:mohammadmahdi.cell@gmail.com">
                   <i class="fa-regular fa-envelope"></i> mohammadmahdi.cell@gmail.com
                 </a>
                 <a href="https://www.google.com/maps/search/?api=1&amp;query=Bedias%2C+Sour%2C+Lebanon" target="_blank" rel="noopener">
-                  <i class="fa-solid fa-location-dot"></i> Bedias, Sour, Lebanon
+                  <i class="fa-solid fa-location-dot"></i> <span data-i18n="contact.location">Bedias, Sour, Lebanon</span>
                 </a>
               </div>
             </section>
@@ -226,16 +247,16 @@
           <span class="mb-3 mb-md-0 text-muted">
             ©
             <span id="copy-right-date">2024</span>
-            Company, Inc
+            <span data-i18n="footer.brand">MCell</span>. <span data-i18n="footer.rights">All rights reserved.</span>
           </span>
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li class="ms-3 link">
-            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy Policy</a>
           </li>
           <li class="ms-3 link">
-            <a href="terms-and-conditions.html">Terms and Condition</a>
+            <a href="terms-and-conditions.html" data-i18n="footer.termsConditions">Terms and Condition</a>
           </li>
         </ul>
       </footer>
@@ -247,14 +268,18 @@
       target="_blank"
       class="whatsapp-float"
       aria-label="Chat with us on WhatsApp"
+      data-i18n-aria="aria.whatsapp"
     >
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top" data-i18n-aria="aria.backToTop">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <!-- Scripts -->
+    <!-- Translation: runs first so the page reveals as soon as possible -->
+    <script type="text/javascript" src="assets/js/i18n.js"></script>
+
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 

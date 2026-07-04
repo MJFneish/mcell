@@ -29,12 +29,13 @@
 .charges .imageContainer .content {
   position: absolute;
   overflow: hidden;
-  left: 0;
+  inset-inline-start: 0;
   bottom: 0px;
   width: 100%;
   min-width: 300px;
-  margin-left: -25px;
-  padding: 15px 20px 15px 50px;
+  margin-inline-start: -25px;
+  padding-block: 15px;
+  padding-inline: 50px 20px;
   transition: var(--transition);
   z-index: 1;
 }
@@ -69,8 +70,8 @@
   top: 0;
   bottom: 0;
   width: 70%;
-  left: 0;
-  background: linear-gradient(90deg, rgba(var(--primary-rgb), 0.85), rgba(17, 17, 17, 0.55));
+  inset-inline-start: 0;
+  background: linear-gradient(90deg, rgba(var(--primary-rgb), 0.92), rgba(var(--primary-2-rgb), 0.8));
   transform: skew(10deg);
   transform-origin: 50% 100%;
   z-index: -1;
@@ -82,7 +83,18 @@
 }
 
 .charges .imageContainer:hover .content {
-  margin-left: 0;
+  margin-inline-start: 0;
+}
+
+/* RTL: mirror the skewed banner and the reveal-arrow so they lean and slide the correct way */
+html[dir="rtl"] .charges .imageContainer .content::before {
+  transform: skew(-10deg);
+}
+html[dir="rtl"] .charges .imageContainer .content .name::after {
+  transform: scaleX(-1) translateX(6px);
+}
+html[dir="rtl"] .charges .imageContainer:hover .content .name::after {
+  transform: scaleX(-1) translateX(0);
 }
 
 @media screen and (max-width: 576px) {

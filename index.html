@@ -8,8 +8,23 @@
     <meta name="description" content="MCell — instant mobile & internet recharge, app subscriptions and game top-ups in Lebanon. Fast, secure, and a WhatsApp message away." />
     <meta name="theme-color" content="#144e5d" />
 
+    <!-- Language: applied before first paint to avoid a flash of the wrong direction/language -->
+    <script>
+      (function () {
+        var lang = localStorage.getItem("mcell-lang") === "ar" ? "ar" : "en";
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      })();
+    </script>
+    <style>
+      html:not([data-i18n-ready]) body {
+        visibility: hidden;
+      }
+    </style>
+
     <!-- Bootstrap CSS CDN installation -->
     <link
+      id="bootstrapCss"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
@@ -32,7 +47,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tajawal:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -73,21 +88,27 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item">
-              <a class="nav-link active" go-to="home" href="#">Home</a>
+              <a class="nav-link active" go-to="home" href="#" data-i18n="nav.home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" go-to="charges" href="#">Charges</a>
+              <a class="nav-link" go-to="charges" href="#" data-i18n="nav.charges">Charges</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" go-to="apps" href="#">Apps</a>
+              <a class="nav-link" go-to="apps" href="#" data-i18n="nav.apps">Apps</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" go-to="games" href="#">Games</a>
+              <a class="nav-link" go-to="games" href="#" data-i18n="nav.games">Games</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" go-to="contact-us" href="#">Contacts</a>
+              <a class="nav-link" go-to="contact-us" href="#" data-i18n="nav.contacts">Contacts</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <div class="lang-switch" role="group" aria-label="Language">
+                <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                <button type="button" class="lang-btn" data-lang="ar">AR</button>
+              </div>
             </li>
           </ul>
         </div>
@@ -107,36 +128,36 @@
       autoplay-disable-on-interaction="false"
     >
       <swiper-slide>
-        <img src="assets/images/carousel_image_3.jpg" alt="carousel image 1" />
+        <img src="assets/images/carousel_image_3.jpg" alt="Mobile recharge in Lebanon" />
         <div class="content">
-          <span class="badge-pill"><i class="fa-solid fa-bolt"></i> Instant Top-Ups &amp; Subscriptions</span>
-          <h1 class="title text-5xl font-bold text-center mb-4">Mobile App Development</h1>
-          <p class="description text-center mb-4">
-            Since our establishment, we have been delivering high-quality and sustainable software solutions for corporate purposes of worldwide businesses.
+          <span class="badge-pill"><i class="fa-solid fa-bolt"></i> <span data-i18n="hero.badge">Instant Top-Ups &amp; Subscriptions</span></span>
+          <h1 class="title text-5xl font-bold text-center mb-4" data-i18n="hero.slide1.title">Mobile &amp; Internet Recharge, Instantly</h1>
+          <p class="description text-center mb-4" data-i18n="hero.slide1.desc">
+            Top up Alfa, Touch and Ogero in seconds — no app, no lines, just a quick message on WhatsApp.
           </p>
-          <button type="button" class="btn btn-primary text-uppercase py-3 px-4" go-to="contact-us">get in touch</button>
+          <button type="button" class="btn btn-primary text-uppercase py-3 px-4" go-to="contact-us" data-i18n="cta.getInTouch">get in touch</button>
         </div>
       </swiper-slide>
       <swiper-slide>
-        <img src="assets/images/carousel_image_2.jpg" alt="carousel image 2" />
+        <img src="assets/images/carousel_image_2.jpg" alt="Apps, streaming and game top-ups" />
         <div class="content">
-          <span class="badge-pill"><i class="fa-solid fa-bolt"></i> Instant Top-Ups &amp; Subscriptions</span>
-          <h1 class="title text-5xl font-bold text-center mb-4">Experienced Team</h1>
-          <p class="description text-center mb-4">
-            We are a team of qualified software developers, aimed at creating unique and powerful tools for your business & everyday life.
+          <span class="badge-pill"><i class="fa-solid fa-bolt"></i> <span data-i18n="hero.badge">Instant Top-Ups &amp; Subscriptions</span></span>
+          <h1 class="title text-5xl font-bold text-center mb-4" data-i18n="hero.slide2.title">Every App &amp; Game You Love</h1>
+          <p class="description text-center mb-4" data-i18n="hero.slide2.desc">
+            iTunes, Netflix, PlayStation, Steam, PUBG, Valorant and more — subscriptions and top-ups, all in one place.
           </p>
-          <button type="button" class="btn btn-primary" go-to="contact-us">get in touch</button>
+          <button type="button" class="btn btn-primary" go-to="contact-us" data-i18n="cta.getInTouch">get in touch</button>
         </div>
       </swiper-slide>
       <swiper-slide>
-        <img src="assets/images/carousel_image_1.jpg" alt="carousel image 3" />
+        <img src="assets/images/carousel_image_1.jpg" alt="Fast support on WhatsApp" />
         <div class="content">
-          <span class="badge-pill"><i class="fa-solid fa-bolt"></i> Instant Top-Ups &amp; Subscriptions</span>
-          <h1 class="title text-5xl font-bold text-center mb-4">Award-Winning Software</h1>
-          <p class="description text-center mb-4">
-            The software solutions developed by our company have been numerously awarded for usability and innovative features.
+          <span class="badge-pill"><i class="fa-solid fa-bolt"></i> <span data-i18n="hero.badge">Instant Top-Ups &amp; Subscriptions</span></span>
+          <h1 class="title text-5xl font-bold text-center mb-4" data-i18n="hero.slide3.title">Fast, Secure &amp; Always on WhatsApp</h1>
+          <p class="description text-center mb-4" data-i18n="hero.slide3.desc">
+            Real people, real fast replies. Message us anytime and get your order sorted in minutes.
           </p>
-          <button type="button" class="btn btn-primary text-uppercase py-3 px-4" go-to="contact-us">get in touch</button>
+          <button type="button" class="btn btn-primary text-uppercase py-3 px-4" go-to="contact-us" data-i18n="cta.getInTouch">get in touch</button>
         </div>
       </swiper-slide>
     </swiper-container>
@@ -146,29 +167,29 @@
       <div class="feature-item">
         <div class="icon"><i class="fa-solid fa-bolt"></i></div>
         <div>
-          <h6>Instant Delivery</h6>
-          <p>Top-ups delivered in minutes</p>
+          <h6 data-i18n="features.instant.title">Instant Delivery</h6>
+          <p data-i18n="features.instant.desc">Top-ups delivered in minutes</p>
         </div>
       </div>
       <div class="feature-item">
         <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
         <div>
-          <h6>Secure Payment</h6>
-          <p>Trusted, verified transactions</p>
+          <h6 data-i18n="features.secure.title">Secure Payment</h6>
+          <p data-i18n="features.secure.desc">Trusted, verified transactions</p>
         </div>
       </div>
       <div class="feature-item">
         <div class="icon"><i class="fa-solid fa-tags"></i></div>
         <div>
-          <h6>Best Prices</h6>
-          <p>Competitive rates, always</p>
+          <h6 data-i18n="features.prices.title">Best Prices</h6>
+          <p data-i18n="features.prices.desc">Competitive rates, always</p>
         </div>
       </div>
       <div class="feature-item">
         <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
         <div>
-          <h6>24/7 Support</h6>
-          <p>Reach us anytime on WhatsApp</p>
+          <h6 data-i18n="features.support.title">24/7 Support</h6>
+          <p data-i18n="features.support.desc">Reach us anytime on WhatsApp</p>
         </div>
       </div>
     </div>
@@ -178,9 +199,9 @@
       <div class="section container d-flex justify-content-center" id="charges">
         <div class="charges row d-flex row-gap-4 justify-content-center align-items-center">
           <div class="col-12 section-head reveal-up">
-            <span class="eyebrow">Top-Up Instantly</span>
-            <h2>Mobile &amp; Internet Charges</h2>
-            <p class="section-sub">Recharge your line or internet account in seconds — pick your provider below.</p>
+            <span class="eyebrow" data-i18n="charges.eyebrow">Top-Up Instantly</span>
+            <h2 data-i18n="charges.title">Mobile &amp; Internet Charges</h2>
+            <p class="section-sub" data-i18n="charges.sub">Recharge your line or internet account in seconds — pick your provider below.</p>
           </div>
           <div class="col-12 col-sm-6 col-md-4 rounded-2 reveal-up">
             <a href="#" target="_blank" class="imageContainer">
@@ -213,51 +234,51 @@
       <div class="section container" id="apps">
         <div class="apps">
           <div class="section-head reveal-up">
-            <span class="eyebrow">Digital Subscriptions</span>
-            <h2>Apps &amp; Streaming</h2>
-            <p class="section-sub">Gift cards, subscriptions and credit for the platforms you already use.</p>
+            <span class="eyebrow" data-i18n="apps.eyebrow">Digital Subscriptions</span>
+            <h2 data-i18n="apps.title">Apps &amp; Streaming</h2>
+            <p class="section-sub" data-i18n="apps.sub">Gift cards, subscriptions and credit for the platforms you already use.</p>
           </div>
           <div class="apps-grid">
             <div class="app reveal-up">
               <a href="#" target="_blank">
                 <span class="icon-wrap"><img src="assets/images/apps/itunes.webp" alt="itunes" /></span>
-                <p>Itunes</p>
+                <p data-i18n="apps.itunes">Itunes</p>
               </a>
             </div>
             <div class="app reveal-up">
               <a href="#" target="_blank">
                 <span class="icon-wrap"><img src="assets/images/apps/netflix.webp" alt="netflix" /></span>
-                <p>Netflix</p>
+                <p data-i18n="apps.netflix">Netflix</p>
               </a>
             </div>
             <div class="app reveal-up">
               <a href="#" target="_blank">
                 <span class="icon-wrap"><img src="assets/images/apps/play_store.webp" alt="play_store" /></span>
-                <p>Play Store</p>
+                <p data-i18n="apps.playStore">Play Store</p>
               </a>
             </div>
             <div class="app reveal-up">
               <a href="#" target="_blank">
                 <span class="icon-wrap"><img src="assets/images/apps/playstation.webp" alt="playstation" /></span>
-                <p>Playstation</p>
+                <p data-i18n="apps.playstation">Playstation</p>
               </a>
             </div>
             <div class="app reveal-up">
               <a href="#" target="_blank">
                 <span class="icon-wrap"><img src="assets/images/apps/steam.webp" alt="steam" /></span>
-                <p>Steam</p>
+                <p data-i18n="apps.steam">Steam</p>
               </a>
             </div>
             <div class="app reveal-up">
               <a href="#" target="_blank">
                 <span class="icon-wrap"><img src="assets/images/apps/shahid.webp" alt="shahid" /></span>
-                <p>Shahid</p>
+                <p data-i18n="apps.shahid">Shahid</p>
               </a>
             </div>
           </div>
         </div>
         <a href="#" target="_blank" class="link mt-4 ms-auto">
-          Check For More
+          <span data-i18n="cta.checkForMore">Check For More</span>
           <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
@@ -266,129 +287,129 @@
       <div class="section container" id="games">
         <div class="row d-flex row-gap-4">
           <div class="col-12 section-head reveal-up">
-            <span class="eyebrow">Level Up</span>
-            <h2>Game Top-Ups</h2>
-            <p class="section-sub">Subscriptions, in-game currency and event passes for your favorite titles.</p>
+            <span class="eyebrow" data-i18n="games.eyebrow">Level Up</span>
+            <h2 data-i18n="games.title">Game Top-Ups</h2>
+            <p class="section-sub" data-i18n="games.sub">Subscriptions, in-game currency and event passes for your favorite titles.</p>
           </div>
           <div class="games row row-gap-3 justify-content-center">
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/pubg.webp" alt="pubg" /></div>
+                <div class="img-wrap"><img src="assets/images/games/pubg.webp" alt="PUBG Mobile" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">PUBG</h5>
-                  <p class="card-text">Your hub for subscriptions, purchases, events, and everything in between! </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.pubg">PUBG</h5>
+                  <p class="card-text" data-i18n="games.pubg">Top up UC instantly for the latest skins, the Royale Pass and in-game bundles.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/valorant.webp" alt="valorant" /></div>
+                <div class="img-wrap"><img src="assets/images/games/valorant.webp" alt="Valorant" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">Valorant</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.valorant">Valorant</h5>
+                  <p class="card-text" data-i18n="games.valorant">Recharge VP for the newest skins, the battle pass and agent unlocks.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/fifa.webp" alt="fifa" /></div>
+                <div class="img-wrap"><img src="assets/images/games/fifa.webp" alt="EA Sports FC / FIFA" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">FIFA</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.fifa">FIFA</h5>
+                  <p class="card-text" data-i18n="games.fifa">Get FC Points for player packs, Ultimate Team upgrades and more.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/fortnite.webp" alt="fortnite" /></div>
+                <div class="img-wrap"><img src="assets/images/games/fortnite.webp" alt="Fortnite" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">Fortnite</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.fortnite">Fortnite</h5>
+                  <p class="card-text" data-i18n="games.fortnite">Load up V-Bucks for skins, the Battle Pass and item shop drops.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/browl_stars.webp" alt="browl_stars" /></div>
+                <div class="img-wrap"><img src="assets/images/games/browl_stars.webp" alt="Brawl Stars" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">Browl Stars</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.brawlStars">Brawl Stars</h5>
+                  <p class="card-text" data-i18n="games.brawlStars">Top up Gems for new brawlers, skins and the Brawl Pass.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/call_of_duty.webp" alt="call_of_duty" /></div>
+                <div class="img-wrap"><img src="assets/images/games/call_of_duty.webp" alt="Call of Duty" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">Call of Duty</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.callOfDuty">Call of Duty</h5>
+                  <p class="card-text" data-i18n="games.callOfDuty">Recharge CP for battle passes, weapon blueprints and bundles.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/clash_of_clans.webp" alt="clash_of_clans" /></div>
+                <div class="img-wrap"><img src="assets/images/games/clash_of_clans.webp" alt="Clash of Clans" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">Clash of Clans</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.clashOfClans">Clash of Clans</h5>
+                  <p class="card-text" data-i18n="games.clashOfClans">Top up Gems to rush builds, troops and upgrades in your village.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/clash_royal.webp" alt="clash_royal" /></div>
+                <div class="img-wrap"><img src="assets/images/games/clash_royal.webp" alt="Clash Royale" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">Clash Royal</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.clashRoyale">Clash Royale</h5>
+                  <p class="card-text" data-i18n="games.clashRoyale">Recharge Gems for chests, card upgrades and Pass Royale rewards.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/delta_force.webp" alt="delta_force" /></div>
+                <div class="img-wrap"><img src="assets/images/games/delta_force.webp" alt="Delta Force" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">Delta Force</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.deltaForce">Delta Force</h5>
+                  <p class="card-text" data-i18n="games.deltaForce">Top up in-game credits for operator skins, weapons and battle pass tiers.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
 
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/free_fire.webp" alt="free_fire" /></div>
+                <div class="img-wrap"><img src="assets/images/games/free_fire.webp" alt="Free Fire" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">Free Fire</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.freeFire">Free Fire</h5>
+                  <p class="card-text" data-i18n="games.freeFire">Recharge Diamonds for characters, skins and Elite Pass access.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/lords_mobile.webp" alt="lords_mobile" /></div>
+                <div class="img-wrap"><img src="assets/images/games/lords_mobile.webp" alt="Lords Mobile" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">Lords Mobile</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.lordsMobile">Lords Mobile</h5>
+                  <p class="card-text" data-i18n="games.lordsMobile">Top up Gems to speed up building, training and kingdom upgrades.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 reveal-up">
               <div class="card">
-                <div class="img-wrap"><img src="assets/images/games/minecraft.webp" alt="minecraft" /></div>
+                <div class="img-wrap"><img src="assets/images/games/minecraft.webp" alt="Minecraft" /></div>
                 <div class="card-body">
-                  <h5 class="card-title">Minecraft</h5>
-                  <p class="card-text">All Subscription, Purchases, events and more is available. </p>
-                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Message us</a>
+                  <h5 class="card-title" data-i18n="gameTitle.minecraft">Minecraft</h5>
+                  <p class="card-text" data-i18n="games.minecraft">Load up Minecoins for skins, texture packs and Marketplace content.</p>
+                  <a href="#" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span></a>
                 </div>
               </div>
             </div>
@@ -396,7 +417,7 @@
           </div>
         </div>
         <a href="#" target="_blank" class="link mt-4 ms-auto">
-          Check For More
+          <span data-i18n="cta.checkForMore">Check For More</span>
           <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
@@ -404,7 +425,7 @@
       <!-- Contact Information -->
       <div class="section contact container">
         <div class="col-12 section-head reveal-up">
-          <span class="eyebrow">Say Hello</span>
+          <span class="eyebrow" data-i18n="contact.eyebrow">Say Hello</span>
         </div>
         <div class="row justify-content-center d-flex row-gap-4">
           <div class="col-sm-8 col-md-6 col-lg-4 reveal-up">
@@ -412,7 +433,7 @@
               <a class="info" href="https://wa.me/71632553?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">
                 <i class="fa-solid fa-mobile-screen-button"></i>
                 <div class="divider"></div>
-                <p>+961 71 632 553</p>
+                <p dir="ltr">+961 71 632 553</p>
               </a>
             </article>
           </div>
@@ -421,7 +442,7 @@
               <a class="info" href="https://www.google.com/maps/search/?api=1&amp;query=Bedias%2C+Sour%2C+Lebanon" target="_blank" rel="noopener">
                 <i class="fa-solid fa-house"></i>
                 <div class="divider"></div>
-                <p>Bedias, Sour, Lebanon</p>
+                <p data-i18n="contact.location">Bedias, Sour, Lebanon</p>
               </a>
             </article>
           </div>
@@ -440,28 +461,28 @@
       <!-- Contact Us -->
       <div class="section container contact-us" id="contact-us">
         <div class="title reveal-up">
-          <h2 class="t1">Get In Touch</h2>
-          <h5 class="t2">If you have any questions, just fill in the contact form, and we will answer you shortly.</h5>
+          <h2 class="t1" data-i18n="contactUs.title">Get In Touch</h2>
+          <h5 class="t2" data-i18n="contactUs.sub">If you have any questions, just fill in the contact form, and we will answer you shortly.</h5>
         </div>
         <form class="row g-3 reveal-up">
           <div class="col-12 col-sm-6 col-lg-4">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control form-control-lg" id="name" placeholder="Name" />
+            <label for="name" class="form-label" data-i18n="contactUs.labelName">Your Name</label>
+            <input type="text" class="form-control form-control-lg" id="name" placeholder="Name" data-i18n-placeholder="contactUs.placeholderName" />
           </div>
           <div class="col-12 col-sm-6 col-lg-4">
-            <label for="email" class="form-label">E-mail</label>
-            <input type="email" class="form-control form-control-lg" id="email" placeholder="someone@email.com" />
+            <label for="email" class="form-label" data-i18n="contactUs.labelEmail">E-mail</label>
+            <input type="email" class="form-control form-control-lg" id="email" placeholder="someone@email.com" dir="ltr" data-i18n-placeholder="contactUs.placeholderEmail" />
           </div>
           <div class="col-12 col-sm-6 col-lg-4">
-            <label for="phone" class="form-label">Phone</label>
-            <input type="tel" class="form-control form-control-lg" id="phone" placeholder="xxx-xxx-xxxx" />
+            <label for="phone" class="form-label" data-i18n="contactUs.labelPhone">Phone</label>
+            <input type="tel" class="form-control form-control-lg" id="phone" placeholder="xxx-xxx-xxxx" dir="ltr" data-i18n-placeholder="contactUs.placeholderPhone" />
           </div>
           <div class="col-12">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control form-control-lg" id="message" rows="10" placeholder="Your Message"></textarea>
+            <label for="message" class="form-label" data-i18n="contactUs.labelMessage">Message</label>
+            <textarea class="form-control form-control-lg" id="message" rows="5" placeholder="Your Message" data-i18n-placeholder="contactUs.placeholderMessage"></textarea>
           </div>
           <div class="col-12">
-            <button type="button" id="sendEmail" class="btn btn-primary ms-auto"><i class="fa-solid fa-paper-plane"></i> Submit</button>
+            <button type="button" id="sendEmail" class="btn btn-primary ms-auto"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="cta.submit">Submit</span></button>
           </div>
 
         </form>
@@ -478,16 +499,16 @@
           <span class="mb-3 mb-md-0 text-muted">
             ©
             <span id="copy-right-date">2024</span>
-            Company, Inc
+            <span data-i18n="footer.brand">MCell</span>. <span data-i18n="footer.rights">All rights reserved.</span>
           </span>
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li class="ms-3 link">
-            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy Policy</a>
           </li>
           <li class="ms-3 link">
-            <a href="terms-and-conditions.html">Terms and Condition</a>
+            <a href="terms-and-conditions.html" data-i18n="footer.termsConditions">Terms and Condition</a>
           </li>
         </ul>
       </footer>
@@ -499,14 +520,18 @@
       target="_blank"
       class="whatsapp-float"
       aria-label="Chat with us on WhatsApp"
+      data-i18n-aria="aria.whatsapp"
     >
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top" data-i18n-aria="aria.backToTop">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <!-- Scripts -->
+    <!-- Translation: runs first (no dependency on jQuery/CDN scripts) so the page reveals as soon as possible -->
+    <script type="text/javascript" src="assets/js/i18n.js"></script>
+
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
