@@ -238,29 +238,79 @@
     </main>
 
     <!-- footer -->
-    <div class="container">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex align-items-center">
-          <a href="index.html" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-            <img src="assets/images/logo.png" alt="logo" width="35" height="35" />
-          </a>
-          <span class="mb-3 mb-md-0 text-muted">
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a href="index.html" class="footer-logo">
+                <img src="assets/images/logo.png" alt="logo" width="42" height="42" />
+                <span>Mahdi Cell</span>
+              </a>
+              <p data-i18n="footer.tagline">Instant mobile &amp; internet recharge, app subscriptions and game top-ups — all on WhatsApp.</p>
+              <a
+                href="https://wa.me/71632553?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+                target="_blank"
+                rel="noopener"
+                class="footer-whatsapp"
+              >
+                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span>
+              </a>
+            </div>
+
+            <div class="footer-col">
+              <h6 data-i18n="footer.quickLinks">Quick Links</h6>
+              <ul>
+                <li><a href="index.html#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="index.html#charges" data-i18n="nav.charges">Charges</a></li>
+                <li><a href="index.html#apps" data-i18n="nav.apps">Apps</a></li>
+                <li><a href="index.html#games" data-i18n="nav.games">Games</a></li>
+                <li><a href="index.html#contact-us" data-i18n="nav.contacts">Contacts</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h6 data-i18n="footer.contactHeading">Get In Touch</h6>
+              <ul class="footer-contact">
+                <li>
+                  <a href="https://wa.me/71632553?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">
+                    <i class="fa-solid fa-mobile-screen-button"></i> <span dir="ltr">+961 71 632 553</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:mohammadmahdi.cell@gmail.com">
+                    <i class="fa-regular fa-envelope"></i> mohammadmahdi.cell@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Bedias%2C+Sour%2C+Lebanon" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-location-dot"></i> <span data-i18n="contact.location">Bedias, Sour, Lebanon</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h6 data-i18n="footer.legalHeading">Legal</h6>
+              <ul>
+                <li><a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy Policy</a></li>
+                <li><a href="terms-and-conditions.html" data-i18n="footer.termsConditions">Terms and Condition</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <span>
             ©
             <span id="copy-right-date">2024</span>
             <span data-i18n="footer.brand">MCell</span>. <span data-i18n="footer.rights">All rights reserved.</span>
           </span>
         </div>
-
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li class="ms-3 link">
-            <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy Policy</a>
-          </li>
-          <li class="ms-3 link">
-            <a href="terms-and-conditions.html" data-i18n="footer.termsConditions">Terms and Condition</a>
-          </li>
-        </ul>
-      </footer>
-    </div>
+      </div>
+    </footer>
 
     <!-- Floating actions -->
     <a

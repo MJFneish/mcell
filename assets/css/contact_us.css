@@ -28,11 +28,12 @@
 .contact-us .form-control {
   border-radius: var(--radius-sm);
   border-color: var(--gray4);
-  padding: 0.85rem 1rem;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.95rem;
 }
 
 .contact-us textarea {
-  height: 350px;
+  height: 160px;
 }
 
 .contact-us #sendEmail {

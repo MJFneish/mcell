@@ -1,29 +1,129 @@
-footer {
+.site-footer {
   position: relative;
+  margin-top: 4rem;
+  background: linear-gradient(160deg, var(--primary-dark), #071f26);
+  color: rgba(255, 255, 255, 0.75);
 }
-footer::before {
+.site-footer::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 1px;
-  background: var(--gradient-primary);
+  height: 3px;
+  background: var(--gradient-accent);
 }
 
-footer .nav .link a {
-  color: var(--gray0);
+.footer-top {
+  padding: 3.5rem 0 2.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
+  gap: 2.5rem;
+}
+
+.footer-brand .footer-logo {
+  direction: ltr;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #fff;
   text-decoration: none;
-  transition: var(--transition);
+  margin-bottom: 1rem;
 }
-footer .nav .link a:hover {
-  color: var(--primary);
+.footer-brand p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  max-width: 320px;
 }
 
-footer i {
+.footer-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--whatsapp);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 50px;
   transition: var(--transition);
 }
-footer i:hover {
-  color: var(--primary);
+.footer-whatsapp:hover {
   transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.35);
+  color: #fff;
+}
+
+.footer-col h6 {
+  color: #fff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-col a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer-col a:hover {
+  color: #fff;
+  padding-inline-start: 4px;
+}
+
+.footer-contact li a {
+  align-items: flex-start;
+}
+.footer-contact i {
+  color: var(--accent);
+  width: 16px;
+  text-align: center;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 0;
+}
+.footer-bottom-inner {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+@media screen and (max-width: 991px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2.5rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 }

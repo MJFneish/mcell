@@ -135,7 +135,7 @@
           <p class="description text-center mb-4" data-i18n="hero.slide1.desc">
             Top up Alfa, Touch and Ogero in seconds — no app, no lines, just a quick message on WhatsApp.
           </p>
-          <button type="button" class="btn btn-primary text-uppercase py-3 px-4" go-to="contact-us" data-i18n="cta.getInTouch">get in touch</button>
+          <!-- <button type="button" class="btn btn-primary text-uppercase py-3 px-4" go-to="contact-us" data-i18n="cta.getInTouch">get in touch</button> -->
         </div>
       </swiper-slide>
       <swiper-slide>
@@ -146,7 +146,7 @@
           <p class="description text-center mb-4" data-i18n="hero.slide2.desc">
             iTunes, Netflix, PlayStation, Steam, PUBG, Valorant and more — subscriptions and top-ups, all in one place.
           </p>
-          <button type="button" class="btn btn-primary" go-to="contact-us" data-i18n="cta.getInTouch">get in touch</button>
+          <!-- <button type="button" class="btn btn-primary" go-to="contact-us" data-i18n="cta.getInTouch">get in touch</button> -->
         </div>
       </swiper-slide>
       <swiper-slide>
@@ -157,7 +157,7 @@
           <p class="description text-center mb-4" data-i18n="hero.slide3.desc">
             Real people, real fast replies. Message us anytime and get your order sorted in minutes.
           </p>
-          <button type="button" class="btn btn-primary text-uppercase py-3 px-4" go-to="contact-us" data-i18n="cta.getInTouch">get in touch</button>
+          <!-- <button type="button" class="btn btn-primary text-uppercase py-3 px-4" go-to="contact-us" data-i18n="cta.getInTouch">get in touch</button> -->
         </div>
       </swiper-slide>
     </swiper-container>
@@ -277,10 +277,6 @@
             </div>
           </div>
         </div>
-        <a href="#" target="_blank" class="link mt-4 ms-auto">
-          <span data-i18n="cta.checkForMore">Check For More</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
       </div>
 
       <!-- Games -->
@@ -416,10 +412,6 @@
 
           </div>
         </div>
-        <a href="#" target="_blank" class="link mt-4 ms-auto">
-          <span data-i18n="cta.checkForMore">Check For More</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
       </div>
 
       <!-- Contact Information -->
@@ -490,29 +482,79 @@
     </main>
 
     <!-- footer -->
-    <div class="container">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex align-items-center">
-          <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-            <img src="assets/images/logo.png" alt="logo" width="35" height="35" />
-          </a>
-          <span class="mb-3 mb-md-0 text-muted">
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a href="#home" go-to="home" class="footer-logo">
+                <img src="assets/images/logo.png" alt="logo" width="42" height="42" />
+                <span>Mahdi Cell</span>
+              </a>
+              <p data-i18n="footer.tagline">Instant mobile &amp; internet recharge, app subscriptions and game top-ups — all on WhatsApp.</p>
+              <a
+                href="https://wa.me/71632553?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+                target="_blank"
+                rel="noopener"
+                class="footer-whatsapp"
+              >
+                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span>
+              </a>
+            </div>
+
+            <div class="footer-col">
+              <h6 data-i18n="footer.quickLinks">Quick Links</h6>
+              <ul>
+                <li><a href="#home" go-to="home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#charges" go-to="charges" data-i18n="nav.charges">Charges</a></li>
+                <li><a href="#apps" go-to="apps" data-i18n="nav.apps">Apps</a></li>
+                <li><a href="#games" go-to="games" data-i18n="nav.games">Games</a></li>
+                <li><a href="#contact-us" go-to="contact-us" data-i18n="nav.contacts">Contacts</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h6 data-i18n="footer.contactHeading">Get In Touch</h6>
+              <ul class="footer-contact">
+                <li>
+                  <a href="https://wa.me/71632553?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">
+                    <i class="fa-solid fa-mobile-screen-button"></i> <span dir="ltr">+961 71 632 553</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:mohammadmahdi.cell@gmail.com">
+                    <i class="fa-regular fa-envelope"></i> mohammadmahdi.cell@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Bedias%2C+Sour%2C+Lebanon" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-location-dot"></i> <span data-i18n="contact.location">Bedias, Sour, Lebanon</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h6 data-i18n="footer.legalHeading">Legal</h6>
+              <ul>
+                <li><a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy Policy</a></li>
+                <li><a href="terms-and-conditions.html" data-i18n="footer.termsConditions">Terms and Condition</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <span>
             ©
             <span id="copy-right-date">2024</span>
             <span data-i18n="footer.brand">MCell</span>. <span data-i18n="footer.rights">All rights reserved.</span>
           </span>
         </div>
-
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li class="ms-3 link">
-            <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy Policy</a>
-          </li>
-          <li class="ms-3 link">
-            <a href="terms-and-conditions.html" data-i18n="footer.termsConditions">Terms and Condition</a>
-          </li>
-        </ul>
-      </footer>
-    </div>
+      </div>
+    </footer>
 
     <!-- Floating actions -->
     <a

@@ -28,15 +28,6 @@ function buildWhatsappLinks() {
 
     $(this).find('.btn').attr('href', whatsappURL);
   });
-
-
-  // Check More Links
-  $('a.link').each(function() {
-    const msg = `Hello I need to check for more information about purchasing and payments`
-    const encodedMsg = encodeURIComponent(msg);
-    const whatsappURL = `https://wa.me/71632553?text=${encodedMsg}`;
-    $(this).attr('href', whatsappURL);
-  })
 }
 
 // Exposed so i18n.js can rebuild these links (with the new-language titles)
