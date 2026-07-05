@@ -1,5 +1,5 @@
 $(function () {
-  $("[go-to]").on("click", function (e) {
+  $("[go-to]").on("click", /** @this {HTMLElement} @param {Event} e */ function (e) {
     e.preventDefault();
 
     var targetId = $(this).attr("go-to");
@@ -12,9 +12,10 @@ $(function () {
     );
   });
 
+  /** @param {string} sectionId */
   function isSectionInNav(sectionId) {
     var isInNav = false;
-    $("nav a[go-to]").each(function () {
+    $("nav a[go-to]").each(/** @this {HTMLElement} */ function () {
       if ($(this).attr("go-to") == sectionId) {
         isInNav = true;
         return false;
@@ -26,7 +27,7 @@ $(function () {
   function updateActiveNavLink() {
     var scrollPosition = $(window).scrollTop();
 
-    $(".section").each(function () {
+    $(".section").each(/** @this {HTMLElement} */ function () {
       var sectionId = $(this).attr("id");
       if (!sectionId || !isSectionInNav(sectionId)) {
         return;

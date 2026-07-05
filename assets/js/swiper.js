@@ -1,5 +1,6 @@
 $(function () {
-  const swiper = document.querySelector(".mySwiper").swiper;
+  const swiperEl = /** @type {any} */ (document.querySelector(".mySwiper"));
+  const swiper = swiperEl.swiper;
   swiper.init = false;
   const resetSliderContentStyles = () => {
     $("swiper-slide .content").css({

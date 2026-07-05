@@ -416,6 +416,7 @@
     return stored === "ar" ? "ar" : "en";
   }
 
+  /** @param {"en"|"ar"} lang */
   function swapBootstrap(lang) {
     var link = document.getElementById("bootstrapCss");
     if (!link) return;
@@ -429,7 +430,9 @@
     }
   }
 
+  /** @param {"en"|"ar"} lang */
   function applyLang(lang) {
+    /** @type {Record<string, string>} */
     var dict = STRINGS[lang];
     var html = document.documentElement;
     html.lang = lang;
@@ -439,17 +442,17 @@
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
-      if (dict[key] !== undefined) el.textContent = dict[key];
+      if (key && dict[key] !== undefined) el.textContent = dict[key];
     });
 
     document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
       var key = el.getAttribute("data-i18n-placeholder");
-      if (dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
+      if (key && dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
     });
 
     document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
       var key = el.getAttribute("data-i18n-aria");
-      if (dict[key] !== undefined) el.setAttribute("aria-label", dict[key]);
+      if (key && dict[key] !== undefined) el.setAttribute("aria-label", dict[key]);
     });
 
     document.querySelectorAll(".lang-btn").forEach(function (btn) {
@@ -458,11 +461,13 @@
 
     // Rebuild WhatsApp deep-links so their pre-filled text matches the
     // now-current-language titles (links.js reads titles from the DOM).
-    if (typeof window.buildWhatsappLinks === "function") window.buildWhatsappLinks();
+    var win = /** @type {any} */ (window);
+    if (typeof win.buildWhatsappLinks === "function") win.buildWhatsappLinks();
 
     document.documentElement.setAttribute("data-i18n-ready", "true");
   }
 
+  /** @param {"en"|"ar"} lang */
   function setLang(lang) {
     localStorage.setItem(STORAGE_KEY, lang);
     applyLang(lang);
@@ -470,7 +475,7 @@
 
   document.querySelectorAll(".lang-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      setLang(btn.getAttribute("data-lang"));
+      setLang(btn.getAttribute("data-lang") === "ar" ? "ar" : "en");
     });
   });
 

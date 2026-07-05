@@ -1,5 +1,5 @@
 (function () {
-  var targets = document.querySelectorAll(".reveal-up, .reveal-left, .reveal-right, .reveal-fade");
+  var targets = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll(".reveal-up, .reveal-left, .reveal-right, .reveal-fade"));
   if (!targets.length) return;
 
   var groupCounts = new Map();
@@ -7,7 +7,7 @@
     var parent = el.parentElement;
     var idx = groupCounts.get(parent) || 0;
     groupCounts.set(parent, idx + 1);
-    el.style.setProperty("--stagger", idx % 6);
+    el.style.setProperty("--stagger", String(idx % 6));
   });
 
   if (!("IntersectionObserver" in window)) {
