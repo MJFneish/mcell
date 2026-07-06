@@ -2,9 +2,16 @@
   transition: var(--transition);
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.85) !important;
+  background: var(--navbar-bg) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/* Bootstrap's default toggler icon is a baked-in dark-stroke SVG; swap it
+   for a white-stroke version so it stays visible against the dark navbar. */
+html[data-bs-theme="dark"] .navbar-toggler {
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.25);
 }
 .navbar.scrolled {
   padding-top: 0.5rem;
@@ -21,15 +28,16 @@
   font-size: 1.15rem;
   transition: var(--transition);
 }
-.navbar-brand img {
-  transition: var(--transition);
+.navbar-brand .logo-mark {
+  width: 50px;
+  height: 50px;
 }
-.navbar.scrolled .navbar-brand img {
+.navbar.scrolled .navbar-brand .logo-mark {
   width: 40px;
   height: 40px;
 }
 
-.navbar-brand span {
+.navbar-brand .brand-text {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
@@ -43,14 +51,14 @@
   line-height: 1.2;
   font-weight: 500;
   letter-spacing: 0;
-  color: rgba(0, 0, 0, 0.55);
+  color: var(--nav-link);
   transition: var(--transition);
   position: relative;
 }
 
 .nav-link.active,
 .nav-link:hover {
-  color: rgba(0, 0, 0, 1);
+  color: var(--nav-link-active);
 }
 
 @media screen and (min-width: 992px) {
@@ -104,4 +112,35 @@
 }
 .lang-btn:not(.active):hover {
   color: var(--primary);
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--gray4);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--gray0);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.theme-toggle:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.theme-toggle i {
+  pointer-events: none;
+}
+.theme-toggle .fa-sun {
+  display: none;
+}
+html[data-bs-theme="dark"] .theme-toggle .fa-moon {
+  display: none;
+}
+html[data-bs-theme="dark"] .theme-toggle .fa-sun {
+  display: inline-block;
 }

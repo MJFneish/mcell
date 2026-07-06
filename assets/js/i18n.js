@@ -111,6 +111,7 @@
       "aria.whatsapp": "Chat with us on WhatsApp",
       "aria.backToTop": "Back to top",
       "aria.langSwitch": "Language",
+      "aria.themeToggle": "Toggle dark mode",
 
       "legal.eyebrow": "Legal",
       "legal.toc": "On this page",
@@ -309,6 +310,7 @@
       "aria.whatsapp": "تواصل معنا عبر واتساب",
       "aria.backToTop": "العودة إلى الأعلى",
       "aria.langSwitch": "اللغة",
+      "aria.themeToggle": "تبديل الوضع الداكن",
 
       "legal.eyebrow": "قانوني",
       "legal.toc": "في هذه الصفحة",

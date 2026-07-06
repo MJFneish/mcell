@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>MCell</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link id="favicon" rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <meta name="description" content="MCell — instant mobile & internet recharge, app subscriptions and game top-ups in Lebanon. Fast, secure, and a WhatsApp message away." />
     <meta name="theme-color" content="#144e5d" />
@@ -14,6 +14,14 @@
         var lang = localStorage.getItem("mcell-lang") === "ar" ? "ar" : "en";
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      })();
+    </script>
+
+    <!-- Theme: applied before first paint to avoid a flash of the wrong theme -->
+    <script>
+      (function () {
+        var theme = localStorage.getItem("mcell-theme") === "dark" ? "dark" : "light";
+        document.documentElement.setAttribute("data-bs-theme", theme);
       })();
     </script>
     <style>
@@ -72,8 +80,8 @@
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand mr-auto" href="#">
-          <img src="assets/images/logo.png" alt="logo" width="50" height="50" />
-          <span>Mahdi</span>
+          <span class="logo-mark" role="img" aria-label="MCell logo"></span>
+          <span class="brand-text">Mahdi</span>
           Cell
         </a>
         <button
@@ -105,6 +113,12 @@
               <a class="nav-link" go-to="contact-us" href="#" data-i18n="nav.contacts">Contacts</a>
             </li>
             <li class="nav-item ms-lg-3">
+              <button type="button" class="theme-toggle" id="themeToggle" data-i18n-aria="aria.themeToggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+              </button>
+            </li>
+            <li class="nav-item ms-lg-2">
               <div class="lang-switch" role="group" aria-label="Language">
                 <button type="button" class="lang-btn active" data-lang="en">EN</button>
                 <button type="button" class="lang-btn" data-lang="ar">AR</button>
@@ -488,7 +502,7 @@
           <div class="footer-grid">
             <div class="footer-brand">
               <a href="#home" go-to="home" class="footer-logo">
-                <img src="assets/images/logo.png" alt="logo" width="42" height="42" />
+                <span class="logo-mark" role="img" aria-label="MCell logo"></span>
                 <span>Mahdi Cell</span>
               </a>
               <p data-i18n="footer.tagline">Instant mobile &amp; internet recharge, app subscriptions and game top-ups — all on WhatsApp.</p>
@@ -573,6 +587,7 @@
     <!-- Scripts -->
     <!-- Translation: runs first (no dependency on jQuery/CDN scripts) so the page reveals as soon as possible -->
     <script type="text/javascript" src="assets/js/i18n.js"></script>
+    <script type="text/javascript" src="assets/js/theme.js"></script>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

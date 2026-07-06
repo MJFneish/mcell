@@ -6,7 +6,7 @@
 
 .app {
   position: relative;
-  background-color: #fff;
+  background-color: var(--bg-elevated);
   border: 1px solid var(--gray5);
   border-radius: var(--radius);
   transition: var(--transition);

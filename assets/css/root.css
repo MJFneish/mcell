@@ -30,4 +30,37 @@
 
   --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
   --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+
+  --bg: #fff;
+  --bg-elevated: #fff;
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --nav-link: rgba(0, 0, 0, 0.55);
+  --nav-link-active: #000;
+}
+
+/* Dark theme — toggled via html[data-bs-theme] so Bootstrap's own dark-mode
+   component styles (forms, etc.) switch over at the same time. */
+html[data-bs-theme="dark"] {
+  --primary: #2bb2c9;
+  --primary-rgb: 43, 178, 201;
+  --primary-2: #52cfe0;
+  --primary-2-rgb: 82, 207, 224;
+
+  --text: #eef3f4;
+  --gray5: #22343a;
+  --gray4: #34474d;
+  --gray3: #55686d;
+  --gray2: #8b9a9e;
+  --gray1: #aebcbe;
+  --gray0: #c9d3d5;
+
+  --bg: #0b1a1f;
+  --bg-elevated: #122730;
+  --navbar-bg: rgba(11, 26, 31, 0.85);
+  --nav-link: rgba(255, 255, 255, 0.65);
+  --nav-link-active: #fff;
+
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 55px rgba(0, 0, 0, 0.55);
 }
