@@ -295,6 +295,7 @@
       "aria.langSwitch": "Language",
       "aria.themeToggle": "Toggle dark mode",
       "aria.close": "Close",
+      "aria.loading": "Loading",
 
       "legal.eyebrow": "Legal",
       "legal.toc": "On this page",
@@ -677,6 +678,7 @@
       "aria.langSwitch": "اللغة",
       "aria.themeToggle": "تبديل الوضع الداكن",
       "aria.close": "إغلاق",
+      "aria.loading": "جارٍ التحميل",
 
       "legal.eyebrow": "قانوني",
       "legal.toc": "في هذه الصفحة",

@@ -28,7 +28,44 @@
       html:not([data-i18n-ready]) body {
         visibility: hidden;
       }
+      /* The preloader has its own opaque background, so it stays visible
+         (and covers the flash of unstyled content) even while the rest
+         of body is hidden waiting on i18n. */
+      html:not([data-i18n-ready]) #preloader {
+        visibility: visible;
+      }
     </style>
+
+    <!-- Preloader: hides itself once the page (fonts/images/CDN scripts) has
+         actually finished loading, not just on a fixed timer. Dependency-free
+         so it can't get stuck behind a slow/failed CDN script. -->
+    <script>
+      (function () {
+        var MIN_VISIBLE_MS = 900;
+        var HARD_TIMEOUT_MS = 8000;
+        var shownAt = Date.now();
+        var hidden = false;
+
+        function hidePreloader() {
+          if (hidden) return;
+          hidden = true;
+          var wait = Math.max(0, MIN_VISIBLE_MS - (Date.now() - shownAt));
+          setTimeout(function () {
+            var el = document.getElementById("preloader");
+            document.documentElement.classList.remove("is-loading");
+            if (!el) return;
+            el.classList.add("preloader-hide");
+            setTimeout(function () {
+              el.remove();
+            }, 700);
+          }, wait);
+        }
+
+        document.documentElement.classList.add("is-loading");
+        window.addEventListener("load", hidePreloader);
+        setTimeout(hidePreloader, HARD_TIMEOUT_MS);
+      })();
+    </script>
 
     <!-- Bootstrap CSS CDN installation -->
     <link
@@ -61,6 +98,7 @@
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/root.css" />
+    <link rel="stylesheet" href="assets/css/preloader.css" />
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="assets/css/global.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
@@ -75,6 +113,24 @@
   </head>
 
   <body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader" role="status" aria-live="polite">
+      <span class="visually-hidden" data-i18n="aria.loading">Loading</span>
+      <span class="preloader-blob preloader-blob-1" aria-hidden="true"></span>
+      <span class="preloader-blob preloader-blob-2" aria-hidden="true"></span>
+      <span class="preloader-blob preloader-blob-3" aria-hidden="true"></span>
+      <div class="preloader-orb" aria-hidden="true">
+        <span class="preloader-ring preloader-ring-1"></span>
+        <span class="preloader-ring preloader-ring-2"></span>
+        <span class="preloader-ring preloader-ring-3"></span>
+        <span class="preloader-logo logo-mark"></span>
+      </div>
+      <div class="preloader-brand" aria-hidden="true">
+        <span class="preloader-brand-text">Mahdi<b>Cell</b></span>
+      </div>
+      <div class="preloader-bar" aria-hidden="true"><span class="preloader-bar-fill"></span></div>
+    </div>
+
     <!-- Navbar -->
 
     <nav class="navbar navbar-expand-lg fixed-top">
