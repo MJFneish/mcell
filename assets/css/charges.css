@@ -151,6 +151,25 @@ html[dir="rtl"] .charges .imageContainer:hover .content .name::after {
   top: 1rem;
   inset-inline-end: 1rem;
   z-index: 2;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  opacity: 1;
+  filter: none;
+  background: rgba(10, 30, 35, 0.45)
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e")
+    center / 0.85em no-repeat;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  transition: var(--transition-fast);
+}
+.charges-modal .modal-media .btn-close:hover {
+  background-color: rgba(10, 30, 35, 0.7);
+  transform: scale(1.08);
+}
+.charges-modal .modal-media .btn-close:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35);
 }
 
 /* Chip-style tabs */
