@@ -72,3 +72,16 @@
 .games .card .btn i {
   font-size: 1rem;
 }
+
+.games .card .card-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin: 0.65rem 0 0;
+  font-size: 0.78rem;
+  color: var(--gray1);
+}
+.games .card .card-note i {
+  margin-top: 0.15rem;
+  color: var(--primary-2);
+}

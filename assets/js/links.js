@@ -20,14 +20,24 @@ function buildWhatsappLinks() {
     $(this).find('a').attr('href', whatsappURL);
   });
 
-  // Games
+  // Games: dialog-trigger buttons keep their modal wiring; only direct
+  // WhatsApp buttons get a link. Dialogs get it on their footer button.
   $('.games .card').each(/** @this {HTMLElement} */ function () {
     const title = $(this).find('.card-title').text().trim();
     const msg = `Hello, I need to make a purchase in ${title}. I need to know more about it. Let me know when you're available.`;
     const encodedMsg = encodeURIComponent(msg);
     const whatsappURL = `https://wa.me/71632553?text=${encodedMsg}`;
 
-    $(this).find('.btn').attr('href', whatsappURL);
+    $(this).find('.btn').not('[data-bs-toggle]').attr('href', whatsappURL);
+  });
+
+  $('.charges-modal .game-contact').each(/** @this {HTMLElement} */ function () {
+    const provider = $(this).attr('data-provider');
+    const msg = `Hello, I need to make a purchase in ${provider}. I need to know more about it. Let me know when you're available.`;
+    const encodedMsg = encodeURIComponent(msg);
+    const whatsappURL = `https://wa.me/71632553?text=${encodedMsg}`;
+
+    $(this).attr('href', whatsappURL);
   });
 }
 
