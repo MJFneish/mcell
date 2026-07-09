@@ -1,8 +1,9 @@
 function buildWhatsappLinks() {
-  // Charges
-  $('.charges a').each(/** @this {HTMLElement} */ function () {
-    const title = $(this).find('.name').text().trim();
-    const msg = `Hello, I need to make a charge in ${title}. I need to know more about it. Let me know when you're available.`;
+  // Charges: the cards open a provider dialog, so the WhatsApp link lives on
+  // the dialog's footer contact button instead of the card itself.
+  $('.charges-modal .charge-contact').each(/** @this {HTMLElement} */ function () {
+    const provider = $(this).attr('data-provider');
+    const msg = `Hello, I need to make a charge in ${provider}. I need to know more about it. Let me know when you're available.`;
     const encodedMsg = encodeURIComponent(msg);
     const whatsappURL = `https://wa.me/71632553?text=${encodedMsg}`;
 

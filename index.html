@@ -218,7 +218,7 @@
             <p class="section-sub" data-i18n="charges.sub">Recharge your line or internet account in seconds — pick your provider below.</p>
           </div>
           <div class="col-12 col-sm-6 col-md-4 rounded-2 reveal-up">
-            <a href="#" target="_blank" class="imageContainer">
+            <a href="#" class="imageContainer" role="button" data-bs-toggle="modal" data-bs-target="#alfaChargeModal">
               <img src="assets\images\charges\alfa.webp" alt="Alfa" class="rounded-2" />
               <div class="content">
                 <h5 class="name">Alfa</h5>
@@ -226,7 +226,7 @@
             </a>
           </div>
           <div class="col-12 col-sm-6 col-md-4 rounded-2 reveal-up">
-            <a href="#" target="_blank" class="imageContainer">
+            <a href="#" class="imageContainer" role="button" data-bs-toggle="modal" data-bs-target="#touchChargeModal">
               <img src="assets\images\charges\touch.webp" alt="Touch" class="rounded-2" />
               <div class="content">
                 <h5 class="name">Touch</h5>
@@ -234,7 +234,7 @@
             </a>
           </div>
           <div class="col-12 col-sm-6 col-md-4 rounded-2 reveal-up">
-            <a href="#" target="_blank" class="imageContainer">
+            <a href="#" class="imageContainer" role="button" data-bs-toggle="modal" data-bs-target="#ogeroChargeModal">
               <img src="assets\images\charges\ogero.webp" alt="Ogero" class="rounded-2" />
               <div class="content">
                 <h5 class="name">Ogero</h5>
@@ -569,6 +569,495 @@
         </div>
       </div>
     </footer>
+
+    <!-- Charges provider dialogs -->
+    <div class="modal fade charges-modal" id="alfaChargeModal" tabindex="-1" aria-labelledby="alfaChargeModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-media">
+            <img src="assets/images/charges/alfa.webp" alt="Alfa" />
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="aria.close"></button>
+            <div class="media-content">
+              <h4 id="alfaChargeModalTitle">Alfa</h4>
+              <p data-i18n="chDialog.alfa.desc">
+                Lebanon's first mobile network — recharge cards, prepaid plans and internet bundles, topped up for you in minutes.
+              </p>
+            </div>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-pills charge-chips" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="alfa-plans-tab" data-bs-toggle="pill" data-bs-target="#alfa-plans" type="button" role="tab" aria-controls="alfa-plans" aria-selected="true" data-i18n="chDialog.tabs.plans">Prepaid Plans</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="alfa-internet-tab" data-bs-toggle="pill" data-bs-target="#alfa-internet" type="button" role="tab" aria-controls="alfa-internet" aria-selected="false" data-i18n="chDialog.tabs.internet">Mobile Internet</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="alfa-ushare-tab" data-bs-toggle="pill" data-bs-target="#alfa-ushare" type="button" role="tab" aria-controls="alfa-ushare" aria-selected="false">U-share</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="alfa-social-tab" data-bs-toggle="pill" data-bs-target="#alfa-social" type="button" role="tab" aria-controls="alfa-social" aria-selected="false" data-i18n="chDialog.tabs.social">WhatsApp &amp; Social</button>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="alfa-plans" role="tabpanel" aria-labelledby="alfa-plans-tab">
+                <ul class="plan-list">
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">Alfa Go</span>
+                      <span class="plan-desc" data-i18n="chDialog.alfa.go">3 GB + 60 min + 60 SMS per month</span>
+                    </div>
+                    <span class="plan-price">$6.9</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">Alfa Go+</span>
+                      <span class="plan-desc" data-i18n="chDialog.alfa.goPlus">15 GB + 120 min + 120 SMS per month</span>
+                    </div>
+                    <span class="plan-price">$12</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">Alfa Go Max</span>
+                      <span class="plan-desc" data-i18n="chDialog.alfa.goMax">33 GB + 240 min + 240 SMS per month</span>
+                    </div>
+                    <span class="plan-price">$17</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">Alfa 4x4</span>
+                      <span class="plan-desc" data-i18n="chDialog.alfa.fourByFour">400 MB + 40 min + 400 SMS + a free preferred number on weekends</span>
+                    </div>
+                    <span class="plan-price">$4</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">Alfa A+</span>
+                      <span class="plan-desc" data-i18n="chDialog.alfa.aPlus">5 GB + 180 min + 1,000 SMS per month</span>
+                    </div>
+                    <span class="plan-price">$5</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">Alfa A+ Max</span>
+                      <span class="plan-desc" data-i18n="chDialog.alfa.aPlusMax">40 GB + 240 min + 1,000 SMS per month</span>
+                    </div>
+                    <span class="plan-price">$15</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name" data-i18n="chDialog.rechargeName">Recharge cards</span>
+                      <span class="plan-desc" data-i18n="chDialog.rechargeDesc">Credit vouchers of all values, with different validities</span>
+                    </div>
+                    <span class="plan-price" data-i18n="chDialog.from1">from $1</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="alfa-internet" role="tabpanel" aria-labelledby="alfa-internet-tab">
+                <h6 class="plan-group-title" data-i18n="chDialog.group.monthly">Monthly bundles</h6>
+                <ul class="plan-list">
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">1 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$3.5</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">7 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$9</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">22 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$14.5</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">44 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$21</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">77 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$31</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">111 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$40</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">444 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$129</span>
+                  </li>
+                </ul>
+                <h6 class="plan-group-title" data-i18n="chDialog.group.threeMonth">3-month bundles</h6>
+                <ul class="plan-list">
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">70 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity3m">Valid for 3 months</span>
+                    </div>
+                    <span class="plan-price">$37</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">100 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity3m">Valid for 3 months</span>
+                    </div>
+                    <span class="plan-price">$42</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">200 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity3m">Valid for 3 months</span>
+                    </div>
+                    <span class="plan-price">$67.5</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="alfa-ushare" role="tabpanel" aria-labelledby="alfa-ushare-tab">
+                <p class="pane-intro" data-i18n="chDialog.alfa.ushareIntro">
+                  Share one internet bundle across your devices and with family or friends — bundles of 22 GB and above can be shared with up to 3 secondary users.
+                </p>
+                <ul class="plan-list">
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">22 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.shareable">Shareable with up to 3 users</span>
+                    </div>
+                    <span class="plan-price">$14.5</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">44 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.shareable">Shareable with up to 3 users</span>
+                    </div>
+                    <span class="plan-price">$21</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">77 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.shareable">Shareable with up to 3 users</span>
+                    </div>
+                    <span class="plan-price">$31</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">111 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.shareable">Shareable with up to 3 users</span>
+                    </div>
+                    <span class="plan-price">$40</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">444 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.shareable">Shareable with up to 3 users</span>
+                    </div>
+                    <span class="plan-price">$129</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="alfa-social" role="tabpanel" aria-labelledby="alfa-social-tab">
+                <ul class="plan-list">
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">WhatsApp — 300 MB</span>
+                      <span class="plan-desc" data-i18n="chDialog.whatsappDesc">WhatsApp-only data — keep chatting even when your credit runs out</span>
+                    </div>
+                    <span class="plan-price">$1.67</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="price-note">
+              <i class="fa-solid fa-circle-info"></i>
+              <span data-i18n="chDialog.note">Prices are set by the provider and may change. We always confirm the final price with you on WhatsApp before charging.</span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="https://wa.me/71632553" target="_blank" rel="noopener" class="btn btn-primary charge-contact" data-provider="Alfa">
+              <i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade charges-modal" id="touchChargeModal" tabindex="-1" aria-labelledby="touchChargeModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-media">
+            <img src="assets/images/charges/touch.webp" alt="Touch" />
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="aria.close"></button>
+            <div class="media-content">
+              <h4 id="touchChargeModalTitle">Touch</h4>
+              <p data-i18n="chDialog.touch.desc">
+                Lebanon's leading mobile operator — recharge cards, Web &amp; Talk plans and internet bundles delivered straight to your line.
+              </p>
+            </div>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-pills charge-chips" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="touch-plans-tab" data-bs-toggle="pill" data-bs-target="#touch-plans" type="button" role="tab" aria-controls="touch-plans" aria-selected="true" data-i18n="chDialog.tabs.plans">Prepaid Plans</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="touch-internet-tab" data-bs-toggle="pill" data-bs-target="#touch-internet" type="button" role="tab" aria-controls="touch-internet" aria-selected="false" data-i18n="chDialog.tabs.internet">Mobile Internet</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="touch-social-tab" data-bs-toggle="pill" data-bs-target="#touch-social" type="button" role="tab" aria-controls="touch-social" aria-selected="false" data-i18n="chDialog.tabs.social">WhatsApp &amp; Social</button>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="touch-plans" role="tabpanel" aria-labelledby="touch-plans-tab">
+                <ul class="plan-list">
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">Web &amp; Talk Mini 2</span>
+                      <span class="plan-desc" data-i18n="chDialog.touch.mini2">3 GB + 60 min + 60 SMS per month</span>
+                    </div>
+                    <span class="plan-price">$6.9</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">Web &amp; Talk Maxi 1</span>
+                      <span class="plan-desc" data-i18n="chDialog.touch.maxi1">9 GB + 90 min + 90 SMS per month</span>
+                    </div>
+                    <span class="plan-price">$9.9</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">Web &amp; Talk Maxi 2</span>
+                      <span class="plan-desc" data-i18n="chDialog.touch.maxi2">25 GB + 120 min + 120 SMS per month</span>
+                    </div>
+                    <span class="plan-price">$14.9</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name" data-i18n="chDialog.rechargeName">Recharge cards</span>
+                      <span class="plan-desc" data-i18n="chDialog.touch.recharge">Credit vouchers from $1 to $77, valid from 5 days up to a full year</span>
+                    </div>
+                    <span class="plan-price" data-i18n="chDialog.from1">from $1</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="touch-internet" role="tabpanel" aria-labelledby="touch-internet-tab">
+                <h6 class="plan-group-title" data-i18n="chDialog.group.monthly">Monthly bundles</h6>
+                <ul class="plan-list">
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">1 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$3.5</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">7 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$9</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">22 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$14.5</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">44 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$21</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">77 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$31</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">111 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$40</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">444 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.validity1m">Valid for 1 month</span>
+                    </div>
+                    <span class="plan-price">$129</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="touch-social" role="tabpanel" aria-labelledby="touch-social-tab">
+                <ul class="plan-list">
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">WhatsApp — 300 MB</span>
+                      <span class="plan-desc" data-i18n="chDialog.whatsappDesc">WhatsApp-only data — keep chatting even when your credit runs out</span>
+                    </div>
+                    <span class="plan-price">$1.67</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">Social Data — 300 MB</span>
+                      <span class="plan-desc" data-i18n="chDialog.touch.socialDesc">Dedicated data for Facebook, Instagram, WhatsApp, X and Snapchat</span>
+                    </div>
+                    <span class="plan-price">$2.34</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="price-note">
+              <i class="fa-solid fa-circle-info"></i>
+              <span data-i18n="chDialog.note">Prices are set by the provider and may change. We always confirm the final price with you on WhatsApp before charging.</span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="https://wa.me/71632553" target="_blank" rel="noopener" class="btn btn-primary charge-contact" data-provider="Touch">
+              <i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade charges-modal" id="ogeroChargeModal" tabindex="-1" aria-labelledby="ogeroChargeModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-media">
+            <img src="assets/images/charges/ogero.webp" alt="Ogero" />
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="aria.close"></button>
+            <div class="media-content">
+              <h4 id="ogeroChargeModalTitle">Ogero</h4>
+              <p data-i18n="chDialog.ogero.desc">Lebanon's fixed internet provider — pay your monthly Ogero internet subscription without leaving your home.</p>
+            </div>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-pills charge-chips" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="ogero-bill-tab" data-bs-toggle="pill" data-bs-target="#ogero-bill" type="button" role="tab" aria-controls="ogero-bill" aria-selected="true" data-i18n="chDialog.tabs.bill">Pay Your Bill</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="ogero-plans-tab" data-bs-toggle="pill" data-bs-target="#ogero-plans" type="button" role="tab" aria-controls="ogero-plans" aria-selected="false" data-i18n="chDialog.tabs.ogeroPlans">Plans</button>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="ogero-bill" role="tabpanel" aria-labelledby="ogero-bill-tab">
+                <p class="pane-intro" data-i18n="chDialog.ogero.billIntro">Renew your monthly Ogero internet subscription in three simple steps:</p>
+                <ol class="bill-steps">
+                  <li data-i18n="chDialog.ogero.step1">Send us your Ogero phone or account number on WhatsApp;</li>
+                  <li data-i18n="chDialog.ogero.step2">We confirm your plan and the amount due;</li>
+                  <li data-i18n="chDialog.ogero.step3">We settle the bill and send you the confirmation — done.</li>
+                </ol>
+              </div>
+              <div class="tab-pane fade" id="ogero-plans" role="tabpanel" aria-labelledby="ogero-plans-tab">
+                <h6 class="plan-group-title" data-i18n="chDialog.ogero.limited">Limited plans (monthly quota)</h6>
+                <ul class="plan-list">
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">80 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.ogero.speed4">Up to 4 Mbps</span>
+                    </div>
+                    <span class="plan-price">420,000 LBP</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">100 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.ogero.speed50">Up to 50 Mbps</span>
+                    </div>
+                    <span class="plan-price">630,000 LBP</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">200 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.ogero.speed50">Up to 50 Mbps</span>
+                    </div>
+                    <span class="plan-price">1,250,000 LBP</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">500 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.ogero.speed300">Up to 300 Mbps</span>
+                    </div>
+                    <span class="plan-price">2,450,000 LBP</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name">1000 GB</span>
+                      <span class="plan-desc" data-i18n="chDialog.ogero.speed300">Up to 300 Mbps</span>
+                    </div>
+                    <span class="plan-price">3,500,000 LBP</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name" data-i18n="chDialog.ogero.topupName">Extra 100 GB top-up</span>
+                      <span class="plan-desc" data-i18n="chDialog.ogero.topupDesc">Add 100 GB to any limited plan during the month</span>
+                    </div>
+                    <span class="plan-price">500,000 LBP</span>
+                  </li>
+                </ul>
+                <h6 class="plan-group-title" data-i18n="chDialog.ogero.unlimited">Unlimited plans</h6>
+                <ul class="plan-list">
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name" data-i18n="chDialog.ogero.speed6">Up to 6 Mbps</span>
+                      <span class="plan-desc" data-i18n="chDialog.ogero.unlimitedDesc">Unlimited usage (fair-use policy)</span>
+                    </div>
+                    <span class="plan-price">1,250,000 LBP</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name" data-i18n="chDialog.ogero.speed8">Up to 8 Mbps</span>
+                      <span class="plan-desc" data-i18n="chDialog.ogero.unlimitedDesc">Unlimited usage (fair-use policy)</span>
+                    </div>
+                    <span class="plan-price">1,750,000 LBP</span>
+                  </li>
+                  <li class="plan-row">
+                    <div class="plan-info">
+                      <span class="plan-name" data-i18n="chDialog.ogero.speed50">Up to 50 Mbps</span>
+                      <span class="plan-desc" data-i18n="chDialog.ogero.unlimitedDesc">Unlimited usage (fair-use policy)</span>
+                    </div>
+                    <span class="plan-price">2,250,000 LBP</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="price-note">
+              <i class="fa-solid fa-circle-info"></i>
+              <span data-i18n="chDialog.note">Prices are set by the provider and may change. We always confirm the final price with you on WhatsApp before charging.</span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="https://wa.me/71632553" target="_blank" rel="noopener" class="btn btn-primary charge-contact" data-provider="Ogero">
+              <i class="fa-brands fa-whatsapp"></i> <span data-i18n="cta.messageUs">Message us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Floating actions -->
     <a

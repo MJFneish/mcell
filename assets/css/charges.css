@@ -103,3 +103,159 @@ html[dir="rtl"] .charges .imageContainer:hover .content .name::after {
     max-width: 300px;
   }
 }
+
+/* Provider dialogs */
+.charges-modal .modal-content {
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-elevated);
+  color: var(--text);
+  box-shadow: var(--shadow-lg);
+}
+
+.charges-modal .modal-media {
+  position: relative;
+  height: 220px;
+  flex-shrink: 0;
+}
+.charges-modal .modal-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.charges-modal .modal-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 46, 56, 0.05) 20%, rgba(10, 46, 56, 0.88) 100%);
+}
+.charges-modal .modal-media .media-content {
+  position: absolute;
+  inset-inline: 1.5rem;
+  bottom: 1rem;
+  z-index: 1;
+  color: #fff;
+}
+.charges-modal .modal-media .media-content h4 {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.charges-modal .modal-media .media-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.92;
+}
+.charges-modal .modal-media .btn-close {
+  position: absolute;
+  top: 1rem;
+  inset-inline-end: 1rem;
+  z-index: 2;
+}
+
+/* Chip-style tabs */
+.charges-modal .charge-chips {
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+}
+.charges-modal .charge-chips .nav-link {
+  border: 1px solid var(--gray5);
+  color: var(--gray0);
+  border-radius: 50px;
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+.charges-modal .charge-chips .nav-link:hover {
+  color: var(--primary);
+  border-color: var(--primary-2);
+}
+.charges-modal .charge-chips .nav-link.active {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: #fff;
+}
+
+/* Plan rows */
+.charges-modal .plan-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.charges-modal .plan-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px dashed var(--gray5);
+}
+.charges-modal .plan-list li:last-child {
+  border-bottom: none;
+}
+.charges-modal .plan-name {
+  display: block;
+  font-weight: 600;
+}
+.charges-modal .plan-desc {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--gray0);
+}
+.charges-modal .plan-price {
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+  direction: ltr;
+}
+.charges-modal .plan-group-title {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary-2);
+  margin: 1.1rem 0 0.35rem;
+}
+.charges-modal .tab-pane .plan-group-title:first-child {
+  margin-top: 0;
+}
+
+.charges-modal .pane-intro {
+  font-size: 0.92rem;
+  color: var(--gray0);
+  margin-bottom: 0.85rem;
+}
+.charges-modal .bill-steps {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.charges-modal .price-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 1.1rem 0 0;
+  font-size: 0.8rem;
+  color: var(--gray1);
+}
+.charges-modal .price-note i {
+  margin-top: 0.2rem;
+  color: var(--accent);
+}
+
+.charges-modal .modal-footer {
+  border-top: 1px solid var(--gray5);
+}
+
+@media screen and (max-width: 576px) {
+  .charges-modal .modal-media {
+    height: 170px;
+  }
+  .charges-modal .modal-footer .btn {
+    width: 100%;
+  }
+}
