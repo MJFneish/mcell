@@ -2,6 +2,12 @@
 
 Static marketing site: `index.html`, `privacy-policy.html`, `terms-and-conditions.html`. No build step, no server. EN/AR copy is driven by `data-i18n="key"` attributes in the HTML, resolved against the `STRINGS` object in `assets/js/i18n.js`.
 
+**Project skills** (`.claude/skills/`):
+- `verify` — the formalized version of the policy below; read before taking a screenshot or
+  running WebSearch/WebFetch for provider/game research.
+- `add-provider-or-game` — the repeatable card + dialog + i18n-keys + WhatsApp-link pattern for
+  adding a new charge provider, app, or game.
+
 ## Verification policy — read this before using /run or /verify or launching a browser
 
 A previous session in this repo burned a huge amount of token budget by taking ~90 browser screenshots across a task that was pure text editing (translation strings). Each screenshot stays in context and gets re-billed on every later turn of that session, so repeated screenshotting compounds fast. Follow this policy to avoid repeating that:
